@@ -1,0 +1,133 @@
+/**Navigation**/
+ul { 
+	list-style-type: none;
+ }
+
+ul.navigation {
+	list-style-type: none;
+	height: 42px;
+	width: 100%;
+	background-color: #191919;
+	margin-left: -10px;
+	margin-top: -9px;
+}
+
+.navigation li {
+	color: #84B3CB;
+	float: left;
+	margin-right: 6%;
+	font-size: .85em;
+	font-family: Raleway, sans-serif;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #191919;
+    min-width: 150px;
+    padding: 12px 5px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+	float: none;
+	font-size: 1em;
+}
+
+.logo {
+	float: left;
+	width: 62%;
+	margin-top: 12px; 
+}
+
+.nav {
+	float: right;
+	width: 38%;
+	margin-top: 12px;
+}
+
+.navigation a { 
+	text-decoration: none;
+	color: #84B3CB;
+}
+
+.navigation a:hover {
+	color: #E9B3CB;
+}
+
+/*Credit Card*/
+h1 {
+	color: #394040;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+.container {
+	width: 30%;
+	margin: auto;
+	margin-top: 100px;
+}
+
+label {
+	color: #394040;
+	font-family: sans-serif;
+}
+
+input {
+	width: 100%;
+	margin-bottom: 15px;
+	color: #394040;
+}
+
+select {
+	color: #394040;
+}
+
+.col-1 {
+	width: 48%;
+	margin-right: 4%;
+	float: left;
+}
+
+.col-2 {
+	width: 5%;
+	margin-right: 1%;
+	float: left;
+}
+
+.col-3 {
+	width: 15%;
+	float: left;
+}
+
+.col-2 label {
+	margin-left: 15%;
+}
+.col-3 label {
+	margin-left: 105%;
+}
+
+.footer {
+	float: left;
+	position: relative;
+	clear: left;
+	margin-left: 35%;;
+}
+
+.submit {
+	float: left;
+	padding: 10px 4px;
+	background-color: #91405D;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+}
