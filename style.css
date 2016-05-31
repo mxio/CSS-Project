@@ -21,7 +21,7 @@ ul {
 .navigation {
 	list-style-type: none;
 	height: 41px;
-	width: 100%;
+	width: 100.007%;
 	background-color: #191919;
 	position: absolute;
 	left: 0px;
@@ -62,14 +62,12 @@ ul {
 	float: left;
 	width: 62%;
 	margin-top: 11px;
-	margin-left: 3%; 
 }
 
 .nav {
 	float: right;
 	width: 38%;
 	margin-top: 11px;
-	margin-right: -3.5%;
 }
 
 h1 {
