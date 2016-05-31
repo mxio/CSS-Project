@@ -60,8 +60,9 @@ ul {
 
 .logo {
 	float: left;
-	width: 62%;
+	width: 45%;
 	margin-top: 11px;
+	margin-left: 3%;
 }
 
 .nav {
