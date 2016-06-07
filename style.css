@@ -6,12 +6,12 @@ body {
 .header {
 	background-image: url(cheap_free_wallpaper_hi_ress_by_benoitpaille.jpg);
 	background-size: cover;
-	height: 570px;
-    margin: 25px 0px -22px 0px;
-    width: 101.3%;
-    position: relative;
-    top: 41px;
-    left: -8px;
+	height: 100vh;
+	margin: 25px 0px -22px 0px;
+	width: 101.3%;
+	position: absolute;
+	top: 15px;
+	left: -8px;
 }
 
 ul { 
@@ -21,10 +21,11 @@ ul {
 .navigation {
 	list-style-type: none;
 	height: 41px;
-	width: 100.007%;
+	width: 100% !important;
 	background-color: #191919;
 	position: absolute;
 	left: 0px;
+	top: -1px;
 }
 
 .navigation li {
