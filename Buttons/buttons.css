@@ -10,7 +10,7 @@ ul.navigation {
 	background-color: #191919;
 	position: absolute;
 	left: 0px;
-	top: -1px;
+	top: -19px;
 }
 
 .navigation li {
@@ -66,6 +66,10 @@ ul.navigation {
 }
 
 /**Buttons**/
+.container {
+	margiin-top: 50px;
+}
+
 .button {
   display: inline-block;
   background-color: #FF534B;
