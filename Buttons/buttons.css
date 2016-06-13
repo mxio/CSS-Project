@@ -5,12 +5,11 @@ ul {
 
 ul.navigation {
 	list-style-type: none;
-	height: 41px;
-	width: 100% !important;
+	height: 42px;
+	width: 98.28%;
 	background-color: #191919;
-	position: absolute;
-	left: 0px;
-	top: -18.5px;
+	margin-left: -10px;
+	margin-top: -9px;
 }
 
 .navigation li {
