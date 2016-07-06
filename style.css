@@ -89,7 +89,7 @@ a {
 	color: #84B3CB;
 }
 
-li:hover {
+a:hover {
 	background-color: #E9B3CB;
 }
 
