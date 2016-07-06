@@ -89,7 +89,7 @@ a {
 	color: #84B3CB;
 }
 
-li:hover {
+.navigation li:hover {
 	color: #E9B3CB;
 }
 
