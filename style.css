@@ -108,10 +108,10 @@ blockquote {
 	color: #3D4F6F;
 }
 
-nav ul {
+.nav ul {
 	display: none;
 }
 
-nav ul li:hover  {
+.nav ul li:hover  {
 	display: block;
 	}
