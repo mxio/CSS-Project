@@ -49,7 +49,7 @@ ul {
     z-index: 1;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu, .dropdown:active {
     display: block;
 }
 
