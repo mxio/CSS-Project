@@ -54,10 +54,6 @@ ul {
     display: block;
 }
 
-.dropdown:active .dropdown-menu {
-    display: block;
-}
-
 .dropdown-menu li {
 	float: none;
 	font-size: 1em;
