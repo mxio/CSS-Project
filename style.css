@@ -4,7 +4,7 @@ body {
 
 
 .header {
-	background-image: url(https://github.com/mxio/CSS-Project/blob/gh-pages/large.jpg);
+	background-image: url(large.jpg);
 	background-size: cover;
 	height: 100vh;
 	margin: 25px 0px -22px 0px;
