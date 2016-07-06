@@ -53,7 +53,7 @@ ul {
     display: block;
 }
 
-.dropdown:active {
+.dropdown:active .dropdown-menu {
     display: block;
 }
 
