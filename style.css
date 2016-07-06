@@ -114,4 +114,10 @@ blockquote {
 
 .nav ul li:hover  {
 	display: block;
-	}
+	display: none;
+    	position: absolute;
+    	background-color: #191919;
+    	min-width: 150px;
+    	padding: 12px 5px;
+	z-index: 1;
+}
