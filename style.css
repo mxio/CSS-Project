@@ -107,3 +107,11 @@ blockquote {
 	font-weight: 200;
 	color: #3D4F6F;
 }
+
+nav ul {
+	display: none;
+}
+
+nav ul li:hover  {
+	display: block;
+	}
