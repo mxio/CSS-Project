@@ -1,0 +1,161 @@
+/**Navigation**/
+ul { 
+	list-style-type: none;
+ }
+
+ul.navigation {
+	list-style-type: none;
+	height: 42px;
+	width: 100%;
+	background-color: #191919;
+	margin-left: -10px;
+	margin-top: -9px;
+}
+
+.navigation li {
+	color: #84B3CB;
+	float: left;
+	margin-right: 6%;
+	font-size: .85em;
+	font-family: Raleway, sans-serif;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #191919;
+    min-width: 150px;
+    padding: 12px 5px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+	float: none;
+	font-size: 1em;
+}
+
+.logo {
+	float: left;
+	width: 62%;
+	margin-top: 12px; 
+}
+
+.nav {
+	float: right;
+	width: 38%;
+	margin-top: 12px;
+}
+
+.navigation a { 
+	text-decoration: none;
+	color: #84B3CB;
+}
+
+.navigation a:hover {
+	color: #E9B3CB;
+}
+
+/*Shipping*/
+body {
+	background-color: #F3F3F3;
+	font-family: Roboto;
+}
+
+.container {
+	width: 80%;
+	margin: auto;
+}
+
+h1 {
+	font-weight: 700;
+	text-align: center;
+	color: #2D3242;
+}
+
+.col-1 {
+	width: 47.5%;
+	margin-right: 5%;
+	padding-top: 50px;
+	padding-bottom: 75px;
+	background-color: #fff;
+	float: left;
+}
+
+.col-2 {
+	width: 47.5%;
+	background-color: #fff;
+	float: left;
+	padding-top: 50px;
+	padding-bottom: 75px;
+}
+
+.footer {
+	clear: both;
+	width: 100%;
+}
+
+.footer form {
+	float: right;
+}
+
+h2 {
+	color: #464D66;
+	padding-left: 50px;
+}
+
+input {
+	padding: 5px 0;
+	margin: 5px 0;
+	border-radius: 5px;
+	border: 1px solid grey;
+}
+
+.form-1 {
+	padding-top: 21px;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.form-2 {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.full {
+	width: 97.2%;
+}
+
+.full-2 {
+	width: 97.5%;
+}
+
+.col1 {
+	width: 45%;
+	margin-right: 7%;
+	float: left;
+}
+
+.col2 {
+	width: 45%;
+	float: left;
+}
+
+.submit {
+	color: #CFE1EC;
+	background-color: #2D3242;
+	padding: 10px 10px;
+	border: none;
+	font-size: 16px;
+	text-transform: uppercase;
+	margin-top: 25px;
+}

@@ -1,0 +1,105 @@
+body {
+	height: 100%;
+}
+
+
+.header {
+	background-image: url(cheap_free_wallpaper_hi_ress_by_benoitpaille.jpg);
+	background-size: cover;
+	height: 570px;
+    margin: 25px 0px -22px 0px;
+    width: 101.3%;
+    position: relative;
+    top: 42px;
+    left: -8px;
+}
+
+ul { 
+	list-style-type: none;
+ }
+
+.navigation {
+	list-style-type: none;
+	height: 42px;
+	width: 100%;
+	background-color: #191919;
+	position: absolute;
+	left: 0px;
+}
+
+.navigation li {
+	color: #84B3CB;
+	float: left;
+	margin-right: 6%;
+	font-size: .85em;
+	font-family: Raleway, sans-serif;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #191919;
+    min-width: 150px;
+    padding: 12px 5px;
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+	float: none;
+	font-size: 1em;
+}
+
+.logo {
+	float: left;
+	width: 62%;
+	margin-top: 12px;
+	margin-left: 2%; 
+}
+
+.nav {
+	float: right;
+	width: 38%;
+	margin-top: 12px;
+	margin-right: -2.5%;
+}
+
+h1 {
+	text-align: center;
+	font-family: Raleway;
+	font-weight: 900;
+	font-size: 4.5em;
+	color: #fff;
+}
+
+a { 
+	text-decoration: none;
+	color: #84B3CB;
+}
+
+a:hover {
+	color: #E9B3CB;
+}
+
+section {
+	box-sizing: border-box;
+	margin-top: -25px;
+	padding-top: 100px;
+}
+
+blockquote {
+	width: 50%;
+	margin: auto;
+	font-family: Raleway;
+	font-size: 1.2em;
+	font-weight: 200;
+	color: #3D4F6F;
+}

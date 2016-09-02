@@ -9,15 +9,10 @@ validator.isEmailAddress = function(input) {
   var symbol = input.substr(at, at-2);
   var symbolToSymbol = Symbol(symbol);
     
-  try {
-    if (input.indexOf("@") > -1 && input.indexOf(".") > -1 && str1 && str2) {
-      console.log(true);
+  if (input.indexOf("@") > -1 && input.indexOf(".") > -1 && str1 && str2) {
+    return true;
   }
-  else throw "Enter valid email address";
-  }
-  catch(err){
-  console.log(err); 
-  }
+  else return false;
 };
 
 
@@ -618,3 +613,10 @@ validator.isTrimmed = function(input) {
   var newstr = removeWhiteSpaces.join(" ");
   console.log(newstr);
 };
+
+
+
+
+
+
+
