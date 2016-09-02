@@ -188,3 +188,17 @@ input:hover {
 	padding: 18px 0;
 }
 
+/*Form validation*/
+.invalid {
+	color: red;
+	width: 100%;
+}
+
+.valid {
+	color: #0e3e47;
+	width: 100%;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	margin-top: 10px;
+}
