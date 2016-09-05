@@ -1,6 +1,5 @@
 var signupForm = document.getElementById('signup');
 var email = document.getElementById('email');
-var firstmame = document.getElementById('firstmame');
 
 signupForm.addEventListener('submit', function (event) {
         event.preventDefault();
