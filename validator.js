@@ -218,17 +218,17 @@ validator.isComposedOf = function(input, strings) {
 
 validator.isLength = function(input, n) { 
   if (input.length <= n) {
-    console.log(true);
+    return true;
   }
-  else console.log(false)
+  else return false;
 };
 
 
 validator.isOfLength = function(input, n) { 
     if (input.length >= n) {
-      console.log(true);
+      return true;
     }
-    else console.log(false)
+    else return false;
 };
 
 
