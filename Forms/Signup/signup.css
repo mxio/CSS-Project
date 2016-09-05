@@ -191,12 +191,11 @@ input:hover {
 /*Form validation*/
 .invalid {
 	color: red;
-	width: 100%;
+	border-bottom: 2px solid red;
 }
 
 .valid {
 	color: #0e3e47;
-	width: 100%;
 	border-left: none;
 	border-right: none;
 	border-top: none;

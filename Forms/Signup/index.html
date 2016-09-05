@@ -35,8 +35,8 @@
 
 
 <div class="form">
-	<form method="GET" action="form1_submit.php" class="form1" id ="signup">
-		<input class="fname" type="text" required>
+	<form method="GET" action="form1_submit.php" class="form1" id ="signup" novalidate>
+		<input id = "firstname" class="fname" type="text" required>
 		<input class="lname" type="text" required>
 		<input class="dob" type="date" placeholder="DD/MM/YY" required>
 		<div class="first"><label>First Name</label></div>
@@ -51,6 +51,6 @@
 </div>
 
 <script src="../../validator.js" type="text/javascript"></script>
-	<script src="signup.js" type="text/javascript"></script>
+<script src="signup.js" type="text/javascript"></script>
 </body>
 </html>
