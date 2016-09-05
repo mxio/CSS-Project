@@ -8,10 +8,6 @@ signupForm.addEventListener('submit', function (event) {
              signupForm.className = "invalid";
              email.className = "invalid"; 
         }
-        if (!validator.isEmpty(firstname.value)) {
-        	signupForm.className = "valid";
-        	firstname.className = "valid";
-        }
 
 }, false);
 
@@ -21,10 +17,3 @@ email.addEventListener('input', function(event) {
         email.className = "valid";
     }
 }, false);
-
-firstname.addEventListener('input', function(event)) {
-	if (validator.isEmpty(firstname.value)) {
-		signupForm.className = "invalid";
-		firstname.className = "invalid";
-	}
-}
