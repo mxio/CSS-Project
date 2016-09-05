@@ -118,9 +118,9 @@ validator.isAfterToday = function(input) {
 
 validator.isEmpty = function(input) {
   if (input.length === 0 || !input.trim()) {
-      console.log(true); 
+      return true; 
     }
-    else console.log(false);
+    else return false;
 };
 
 validator.contains = function(input, words) { 
