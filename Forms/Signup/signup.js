@@ -1,7 +1,6 @@
 var signupForm = document.getElementById('signup');
 var email = document.getElementById('email');
-var firstName = document.getElementById('firstName');
-var lastName
+var firstName = document.getElementById('firstname');
 
 signupForm.addEventListener('submit', function (event) {
         event.preventDefault();
