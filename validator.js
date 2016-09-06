@@ -54,15 +54,11 @@ validator.withoutSymbols = function(input) {
 
 validator.isDate = function(input) {
   var date = Date.parse(input);
-  try {
+
   if (date > 0) {
-    console.log(true);
+    return true;
   }
-  else throw "Please enter a valid date";
-  }
-  catch(err) {
-    console.log(err);
-  }
+  else return false;
 };
 
 

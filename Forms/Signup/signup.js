@@ -3,6 +3,7 @@ var email = document.getElementById('email');
 var firstName = document.getElementById('firstname');
 var lastName = document.getElementById('lastname');
 var password = document.getElementById('password');
+var bday = document.getElementById('bday');
 
 signupForm.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -13,6 +14,10 @@ signupForm.addEventListener('submit', function (event) {
         if (validator.isEmpty(lastName.value) || validator.isLength(lastName.value, 2) || !validator.isTrimmed(lastName.value)) {
         	signupForm.className = "form-1 invalid";
         	lastName.className = "lname invalid";
+        }
+        if (!validator.isDate(bday.value)) {
+        	signupForm.className = "form-1 invalid";
+        	bday.className = "dob invalid";
         }
         if (validator.isEmpty(email.value) || !validator.isEmailAddress(email.value) || !validator.isTrimmed(email.value)) {
         	signupForm.className = "form-1 invalid";
@@ -36,6 +41,13 @@ lastName.addEventListener('input', function(event) {
 	if (!validator.isEmpty(lastName.value) || validator.isOfLength(lastName.value, 3) || validator.isTrimmed(lastName.value)) {
 		signupForm.className = "form-1 valid";
 		lastName.className = "lname valid";
+	}
+}, false);
+
+bday.addEventListener('input', function(event) {
+	if (validator.isDate(bday.value)) {
+		signupForm.className = "form-1 valid";
+		bday.className = "dob valid";
 	}
 }, false);
 
