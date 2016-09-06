@@ -14,5 +14,4 @@ search.addEventListener('input', function (event) {
 		searchForm.className = "valid";
 		search.className = "search valid";
 	}
-}, 
-false);
+}, false);
