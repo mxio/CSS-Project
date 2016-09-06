@@ -308,9 +308,9 @@ validator.moreWordsThan = function(input, n) {
 
 validator.isBetween = function(input, floor, ceil) {
   if (input >= floor && input <= ceil) {
-    console.log(true);
+    return true;
   }
-  else console.log(false);
+  else return false;
 };
 
 
@@ -600,19 +600,33 @@ if (isRGB === true || isHSL === true || isHex === true) {
 
 
 validator.isTrimmed = function(input) {
-  var trim = input.trim(); 
-  var removeWhiteSpaces = trim.split(" ");
-  
-  for (var i in removeWhiteSpaces) {
-    if (removeWhiteSpaces.indexOf("") > -1) {  
-      var empty = removeWhiteSpaces.indexOf("");
-      removeWhiteSpaces.splice(empty, 1);
+  var trim = input.trim();
+  var split = trim.split(" ");
+  var space = 0;
+  var words = 0;
+ 
+  for (var i in trim) {
+    if (trim[i] === " ") {
+      space++; 
     }
   }
-    
-  var newstr = removeWhiteSpaces.join(" ");
-  console.log(newstr);
+  
+  for (var j in split) {
+    if (split[j] !== "") {
+      words++
+    }
+  }
+  
+  if (space > words -1) {
+    return false;
+  }
+  else if (input.length === trim.length) {
+    return true;
+  }
+  else
+    return false;
 };
+
 
 
 
