@@ -15,7 +15,7 @@ signupForm.addEventListener('submit', function (event) {
         	signupForm.className = "form-1 invalid";
         	lastName.className = "lname invalid";
         }
-        if (!validator.isDate(bday.value)) {
+        if (!validator.isDate(bday.value) || !validator.isTrimmed(bday.value)) {
         	signupForm.className = "form-1 invalid";
         	bday.className = "dob invalid";
         }
@@ -45,7 +45,7 @@ lastName.addEventListener('input', function(event) {
 }, false);
 
 bday.addEventListener('input', function(event) {
-	if (validator.isDate(bday.value)) {
+	if (validator.isDate(bday.value) || validator.isTrimmed(bday.value)) {
 		signupForm.className = "form-1 valid";
 		bday.className = "dob valid";
 	}
