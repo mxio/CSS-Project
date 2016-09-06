@@ -30,7 +30,7 @@ signupForm.addEventListener('submit', function (event) {
         }
 }, false);
 
-firstName.addEventListener('input', function(event) {
+firstName.addEventListener('input', function (event) {
 	if (!validator.isEmpty(firstName.value) || validator.isOfLength(firstName.value, 3) || validator.isTrimmed(firstName.value)) {
 		signupForm.className = "form-1 valid";
 		firstName.className = "fname valid";

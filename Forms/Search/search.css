@@ -101,3 +101,12 @@ select {
         padding-bottom: 2.2px;
     }
 }  
+
+/*Form validation*/
+.invalid {
+	color: red;
+}
+
+.valid {
+	color: black;
+}

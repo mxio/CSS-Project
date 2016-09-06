@@ -34,11 +34,12 @@
 		<li><a href="../../Product-Listing/index.html">Product Listing</a></li>
 		</div>
 	</ul>
+</nav>
 
 
 <div class="container">
-<form>
-	<input type="text" class="search">
+<form id="searchform" method="GET" action="search_submit.php">
+	<input id="search" type="text" class="search">
 	<input type="submit" value="Search" class="submit">
 	<select name="search-options" id="dropdown">
 		<option value="Books">Books</option>
@@ -48,10 +49,12 @@
 		<option value="Resources">Resources</option>
 		<option value="Blog">Blog</option>
 	</select>
-	
 </form>
 </div>
 	
+<script src="../../validator.js" type="text/javascript"></script>
+<script src="search.js" type="text/javascript"></script>
+
 </body>
 
 </html>

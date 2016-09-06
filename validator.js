@@ -609,7 +609,7 @@ validator.isTrimmed = function(input) {
   
   for (var j in split) {
     if (split[j] !== "") {
-      words++
+      words++;
     }
   }
   
