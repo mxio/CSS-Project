@@ -14,19 +14,19 @@ signupForm.addEventListener('submit', function (event) {
         	signupForm.className = "form-1 invalid";
         	lastName.className = "lname invalid";
         }
-        if (validator.isEmpty(email.value) || !validator.isEmailAddress(email.value) || !validator.isTrimmed(lastName.value)) {
+        if (validator.isEmpty(email.value) || !validator.isEmailAddress(email.value) || !validator.isTrimmed(email.value)) {
         	signupForm.className = "form-1 invalid";
             email.className = "email invalid"; 
         }
 
-        if (!validator.isOfLength(password.value, 6) || !validator.isLength(password.value, 8)) {
+        if (!validator.isOfLength(password.value, 6) || !validator.isLength(password.value, 8) || !validator.isTrimmed(password.value)) {
         	signupForm.className = "form-1 invalid";
         	password.className = "password invalid";
         }
 }, false);
 
 firstName.addEventListener('input', function(event) {
-	if (!validator.isEmpty(firstName.value) || validator.isOfLength(firstName.value, 3) || validator.isTrimmed(lastName.value)) {
+	if (!validator.isEmpty(firstName.value) || validator.isOfLength(firstName.value, 3) || validator.isTrimmed(firstName.value)) {
 		signupForm.className = "form-1 valid";
 		firstName.className = "fname valid";
 	}
@@ -40,14 +40,14 @@ lastName.addEventListener('input', function(event) {
 }, false);
 
 email.addEventListener('input', function(event) {
-    if (!validator.isEmpty(email.value) ||validator.isEmailAddress(email.value) || validator.isTrimmed(lastName.value)) {
+    if (!validator.isEmpty(email.value) || validator.isEmailAddress(email.value) || validator.isTrimmed(email.value)) {
         signupForm.className = "form-1 valid";
         email.className = "email valid";
     }
 }, false);
 
 password.addEventListener('input', function(event) {
-	if (validator.isOfLength(password.value, 6) || validator.isLength(password.value, 8) || validator.isTrimmed(lastName.value)) {
+	if (validator.isOfLength(password.value, 6) || validator.isLength(password.value, 8) || validator.isTrimmed(password.value)) {
 		signupForm.className = "form-1 valid";
 		password.className = "password valid";
 	}
