@@ -95,3 +95,13 @@ h1 {
 	font-family: sans-serif;
 	color: #0DABCF;
 }
+
+
+/*Form validation*/
+.invalid {
+	border: 1px solid red;
+}
+
+.valid {
+	border: 0;
+}
