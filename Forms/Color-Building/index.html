@@ -39,7 +39,7 @@
 
 <div class="container">
 <h1>Color Picker</h1>
-	<form>
+	<form id="form">
 		<span>Red</span>
 		<input type="range" min="0" max="255" step="5">
 		<span>Green</span>
@@ -48,9 +48,12 @@
 		<input type="range" min="0" max="255" step="5">
 		<span>Alpha</span>
 		<input type="range" min="0" max="1" step="0.01">
-		<span>Color </span><input type="text" class="color">
+		<span>Color </span><input id="color" type="text" class="color">
 	</form>
 </div>
+
+<script src="../../validator.js" type="text/javascript"></script>
+<script src="color.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -440,7 +440,7 @@ validator.isRGB = function(input) {
       truth = false;
     }
   }
-  console.log(truth);
+  return truth;
 };
 
 

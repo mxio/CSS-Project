@@ -98,3 +98,14 @@ span {
 	font-family: Roboto;
 	color: #2F3445;
 }
+
+/*validation*/
+.invalid {
+	color: red;
+	border: 1px solid red;
+}
+
+.valid {
+	border: 1px solid #2F3445;
+	color: #2F3445;
+}
