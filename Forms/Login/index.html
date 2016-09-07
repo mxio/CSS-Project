@@ -38,13 +38,17 @@
 
 <div class="container">
 <h1>Login</h1>
-<form>
-	<input type="email" placeholder="Email">
-	<input type="text" placeholder="Password">
+<form id="login" novalidate>
+	<input id="email" type="email" placeholder="Email">
+	<input id="password" type="password" placeholder="Password">
 	<input type="checkbox" class="check"><span>Remember Me</span>
 	<div class="reset-pw"><a href="#">Forgot password?</a></div>
 	<input type="submit" value="LOGIN" class="submit">
 </form>
 </div>
+
+<script src="../../validator.js" type="text/javascript"></script>
+<script src="login.js" type="text/javascript"></script>
+
 </body>
 </html>
