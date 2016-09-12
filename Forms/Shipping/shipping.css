@@ -101,10 +101,7 @@ h1 {
 .footer {
 	clear: both;
 	width: 100%;
-}
-
-.footer form {
-	float: right;
+	text-align: right;
 }
 
 h2 {
