@@ -1,51 +1,52 @@
 var form = document.getElementById('form');
-var firstName = document.getElementById('firstname-shipping');
-var lastName = document.getElementById('lastname-shipping');
+var firstNameShip = document.getElementById('firstname-shipping');
+var lastNameShip = document.getElementById('lastname-shipping');
 var fnameShipLabel = document.getElementById('fname-1');
 var lnameShipLabel = document.getElementById('lname-1');
-var address = document.getElementById('address-shipping');
-var addressLabel = document.getElementById('add-1');
+var addressShip = document.getElementById('address-shipping');
+var addressShipLabel = document.getElementById('add-1');
+
 
 form.addEventListener('submit', function (event) {
 	event.preventDefault();
-	if (validator.isEmpty(firstName.value) || validator.isLength(firstName.value, 2) || !validator.isTrimmed(firstName.value)) {
+	if (validator.isEmpty(firstNameShip.value) || validator.isLength(firstNameShip.value, 2) || !validator.isTrimmed(firstNameShip.value)) {
 		form.className = "invalid";
-		firstName.className = "col1 invalid";
+		firstNameShip.className = "col1 invalid";
 		fnameShipLabel.className = "invalid";
 	}
-	if (validator.isEmpty(lastName.value) || validator.isLength(lastName.value, 2) || !validator.isTrimmed(lastName.value)) {
+	if (validator.isEmpty(lastNameShip.value) || validator.isLength(lastNameShip.value, 2) || !validator.isTrimmed(lastNameShip.value)) {
 		form.className = "invalid";
-		lastName.className = "col2 invalid";
+		lastNameShip.className = "col2 invalid";
 		lnameShipLabel.className = "invalid";
 	}
-	if (validator.isEmpty(address.value) || validator.isLength(address.value, 2) || !validator.isTrimmed(address.value)) {
+	if (validator.isEmpty(addressShip.value) || validator.isLength(addressShip.value, 2) || !validator.isTrimmed(addressShip.value)) {
 		form.className = "invalid";
-		address.className = "full invalid";
-		addressLabel.className = "invalid";
+		addressShip.className = "full invalid";
+		addressShipLabel.className = "invalid";
 	}
 }, false);
 
 
-firstName.addEventListener('input', function (event) {
-	if (!validator.isEmpty(firstName.value) || validator.isOfLength(firstName.value, 3) || validator.isTrimmed(firstName.value)) {
+firstNameShip.addEventListener('input', function (event) {
+	if (!validator.isEmpty(firstNameShip.value) || validator.isOfLength(firstNameShip.value, 3) || validator.isTrimmed(firstNameShip.value)) {
 		form.className = "valid";
-		firstName.className = "col1 valid";
+		firstNameShip.className = "col1 valid";
 		fnameShipLabel.className = "valid";
 	}
 }, false);
 
-lastName.addEventListener('input', function (event) {
-	if (!validator.isEmpty(lastName.value) || !validator.isOfLength(lastName.value, 3) || validator.isTrimmed(lastName.value)) {
+lastNameShip.addEventListener('input', function (event) {
+	if (!validator.isEmpty(lastNameShip.value) || !validator.isOfLength(lastNameShip.value, 3) || validator.isTrimmed(lastNameShip.value)) {
 		form.className = "valid";
-		lastName.className = "col2 valid";
+		lastNameShip.className = "col2 valid";
 		lnameShipLabel.className = "valid";
 	}
 }, false);
 
-address.addEventListener('input', function (event) {
-	if (!validator.isEmpty(address.value) || validator.isOfLength(address.value, 3) || validator.isTrimmed(address.value)) {
+addressShip.addEventListener('input', function (event) {
+	if (!validator.isEmpty(addressShip.value) || validator.isOfLength(addressShip.value, 3) || validator.isTrimmed(addressShip.value)) {
 		form.className = "valid";
-		address.className = "full valid";
-		addressLabel.className = "valid";
+		addressShip.className = "full valid";
+		addressShipLabel.className = "valid";
 	}
 }, false);
