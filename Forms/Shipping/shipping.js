@@ -175,7 +175,7 @@ cityBill.addEventListener('input', function (event) {
 	}
 }, false);
 
-zipShip.addEventListener('input', function (event) {
+zipBill.addEventListener('input', function (event) {
 	if (!validator.isEmpty(zipBill.value) || validator.isOfLength(zipBill.value, 5) || validator.isTrimmed(zipBill.value)) {
 		form.className = "valid";
 		zipBill.className = "full valid";
