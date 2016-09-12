@@ -83,7 +83,7 @@ form.addEventListener('submit', function (event) {
 	}
 	if (validator.isEmpty(zipBill.value) || validator.isLength(zipBill.value, 4) || !validator.isTrimmed(zipBill.value)) {
 		form.className = "invalid";
-		zipBill.className = "full invalid";
+		zipBill.className = "full-2 invalid";
 		zipBillLabel.className = "invalid";
 	}
 	if (validator.isEmpty(countryBill.value) || validator.isLength(countryBill.value, 2) || !validator.isTrimmed(countryBill.value)) {
@@ -178,7 +178,7 @@ cityBill.addEventListener('input', function (event) {
 zipBill.addEventListener('input', function (event) {
 	if (!validator.isEmpty(zipBill.value) || validator.isOfLength(zipBill.value, 5) || validator.isTrimmed(zipBill.value)) {
 		form.className = "valid";
-		zipBill.className = "full valid";
+		zipBill.className = "full-2 valid";
 		zipBillLabel.className = "valid";
 	}
 }, false);
