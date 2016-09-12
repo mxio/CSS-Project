@@ -159,3 +159,13 @@ input {
 	text-transform: uppercase;
 	margin-top: 25px;
 }
+
+
+/*Form validation*/
+.invalid {
+	color: red;
+}
+
+.valid {
+	color: black;
+}

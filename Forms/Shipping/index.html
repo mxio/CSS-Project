@@ -39,55 +39,57 @@
 <div class="container">
 
 <h1>Checkout</h1>
-
+<form id="form">
 <section class="col-1">
 <h2>Shipping</h2>
-<form class="form-1">
-	<div class="col1"><label>First Name</label></div>
-	<div class="col2"><label>Last Name</label></div>
-	<input type="text" name="first-name" class="col1">
-	<input type="text" name="last-name" class="col2"><br>
-	<label>Street Address</label>
- 	<input type="text" name="street" class="full"><br>
+<div class="form-1">
+	<div class="col1"><label id="fname-1">First Name</label></div>
+	<div class="col2"><label id="lname-1">Last Name</label></div>
+	<input id="firstname-shipping" type="text" name="first-name" class="col1">
+	<input id="lastname-shipping" type="text" name="last-name" class="col2"><br>
+	<label id="add-1">Street Address</label>
+ 	<input id="address-shipping" type="text" name="street" class="full"><br>
  	<label>City</label>
 	<input type="text" name="city" class="full"><br>
 	<label>Zip Code</label>
 	<input type="text" name="zip" class="full"><br>
 	<label>Country</label>
 	<input type="text" name="country" class="full">
-</form>
+</div>
 </section>
 
 <section class="col-2">
 <h2>Billing</h2>
 
-<form class="form-2">
+<div class="form-2">
 	<input type="checkbox" name="checkbox">Same as Shipping<br>
-	<div class="col1"><label>First Name</label></div>
+	<div class="col1"><label id="fname-2">First Name</label></div>
 	<div class="col2"><label>Last Name</label></div>
-	<input type="text" name="first-name" class="col1">
-	<input type="text" name="last-name" class="col2"><br>
-	<label>Street Address</label>
- 	<input type="text" name="street" class="full-2"><br>
+	<input id="firstname-billing" type="text" name="first-name" class="col1">
+	<input id="lastname-billing" type="text" name="last-name" class="col2"><br>
+	<label id="add-2">Street Address</label>
+ 	<input id="address-billing" type="text" name="street" class="full-2"><br>
  	<label>City</label>
 	<input type="text" name="city" class="full-2"><br>
 	<label>Zip Code</label>
 	<input type="text" name="zip" class="full-2"><br>
 	<label>Country</label>
 	<input type="text" name="country" class="full-2">
-</form>
+</div>
 
 </section>
 
 <section class="footer">
-	
-<form>
-	<input type="submit" name="submit" class="submit" value="continue">
-</form>
-
+	<div>
+		<input type="submit" name="submit" class="submit" value="continue">
+	</div>
 </section>
 
+</form>
 </div>
+
+<script src="../../validator.js" type="text/javascript"></script>
+<script src="shipping.js" type="text/javascript"></script>
 
 </body>
 </html>
