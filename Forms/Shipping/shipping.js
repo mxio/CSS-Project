@@ -73,12 +73,12 @@ form.addEventListener('submit', function (event) {
 	}
 	if (validator.isEmpty(addressBill.value) || validator.isLength(addressBill.value, 2) || !validator.isTrimmed(addressBill.value)) {
 		form.className = "invalid";
-		addressBill.className = "full invalid";
+		addressBill.className = "full-2 invalid";
 		addressBillLabel.className = "invalid";
 	}
 	if (validator.isEmpty(cityBill.value) || validator.isLength(cityBill.value, 2) || !validator.isTrimmed(cityBill.value)) {
 		form.className = "invalid";
-		cityBill.className = "full invalid";
+		cityBill.className = "full-2 invalid";
 		cityBillLabel.className = "invalid";
 	}
 	if (validator.isEmpty(zipBill.value) || validator.isLength(zipBill.value, 4) || !validator.isTrimmed(zipBill.value)) {
@@ -88,7 +88,7 @@ form.addEventListener('submit', function (event) {
 	}
 	if (validator.isEmpty(countryBill.value) || validator.isLength(countryBill.value, 2) || !validator.isTrimmed(countryBill.value)) {
 		form.className = "invalid";
-		countryBill.className = "full invalid";
+		countryBill.className = "full-2 invalid";
 		countryBillLabel.className = "invalid";
 	}
 }, false);
@@ -162,7 +162,7 @@ lastNameBill.addEventListener('input', function (event) {
 addressBill.addEventListener('input', function (event) {
 	if (!validator.isEmpty(addressBill.value) || validator.isOfLength(addressBill.value, 3) || validator.isTrimmed(addressBill.value)) {
 		form.className = "valid";
-		addressBill.className = "full valid";
+		addressBill.className = "full-2 valid";
 		addressBillLabel.className = "valid";
 	}
 }, false);
@@ -170,7 +170,7 @@ addressBill.addEventListener('input', function (event) {
 cityBill.addEventListener('input', function (event) {
 	if (!validator.isEmpty(cityBill.value) || validator.isOfLength(cityBill.value, 3) || validator.isTrimmed(cityBill.value)) {
 		form.className = "valid";
-		cityBill.className = "full valid";
+		cityBill.className = "full-2 valid";
 		cityBillLabel.className = "valid";
 	}
 }, false);
@@ -186,7 +186,7 @@ zipBill.addEventListener('input', function (event) {
 countryBill.addEventListener('input', function (event) {
 	if (!validator.isEmpty(countryBill.value) || validator.isLength(countryBill.value, 2) || validator.isTrimmed(countryBill.value)) {
 		form.className = "valid";
-		countryBill.className = "full valid";
+		countryBill.className = "full-2 valid";
 		countryBillLabel.className = "valid";
 	}
 }, false);
