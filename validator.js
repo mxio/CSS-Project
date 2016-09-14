@@ -18,20 +18,23 @@ validator.isEmailAddress = function(input) {
 
 validator.isPhoneNumber = function(input) {
   var split = input.split("-");
-  try {
-    if (input.length === 10) {
-      console.log(true);
-    }
-    else if (split[0].length + split[1].length + split[2].length !== 10 ) {
-      throw "Enter valid phone number separated by dashes";
-    }
-    else console.log(true);
-  }
-  catch(err){
-  console.log("Following error occurred: " + err); 
-  }
   
+    if (input.length === 10) {
+      return true;
+    }
+    else if (split.length === 1) {
+        return false;
+     }
+    else if (input.length !== 10) {
+      if (split[0].length + split[1].length + split[2].length !== 10 ) {
+        return false;
+      }
+      else if (split[0].length + split[1].length + split[2].length === 10 ) {
+        return true;
+      }
+    }   
 };
+  
 
 
 validator.withoutSymbols = function(input) {

@@ -179,3 +179,22 @@ footer {
 	border: none;
 	font-size: 20px;
 }
+
+
+.invalid {
+	color: red;
+	border: 1px solid red;
+}
+
+.valid {
+	color: black;
+	border: 1px solid #8F3F4C;
+}
+
+form.invalid {
+	border: none;
+}
+
+form.valid {
+	border: none;
+}
