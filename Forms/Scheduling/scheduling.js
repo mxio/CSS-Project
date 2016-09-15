@@ -5,7 +5,7 @@ var phone = document.getElementById('phone');
 
 form.addEventListener('submit', function (event) {
 	event.preventDefault();
-	if (validator.isEmpty(date.value) || !validator.isDate(date.value)) {
+	if (validator.isEmpty(date.value) || !validator.isDate(date.value) || !validator.isAfterToday(date.value)) {
 		form.className = "invalid";
 		date.className = "col-1 invalid";
 	}
@@ -20,7 +20,7 @@ form.addEventListener('submit', function (event) {
 }, false);
 
 date.addEventListener('input', function (event) {
-	if (!validator.isEmpty(date.value) || validator.isDate(date.value)) {
+	if (!validator.isEmpty(date.value) || validator.isDate(date.value) || validator.isAfterToday(date.value)) {
 		form.className = "valid";
 		date.className = "col-1 valid";
 	}

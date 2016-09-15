@@ -109,9 +109,9 @@ validator.isAfterToday = function(input) {
     inputParse = Date.parse(input);
 
   if  (inputParse > dParse) {
-    console.log(true);
+    return true;
   }
-  else console.log(false);
+  else return false;
 };
 
 
