@@ -118,8 +118,8 @@ validator.isAfterToday = function(input) {
 validator.isEmpty = function(input) {
   if (input.length === 0 || !input.trim()) {
       return true; 
-    }
-    else return false;
+  }
+  else return false;
 };
 
 validator.contains = function(input, words) { 
@@ -350,7 +350,6 @@ validator.isCreditCard = function(input) {
   var alpha = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
   var isAlpha = false;
  
-  try {
     for (var i in newInp) {
       if (newInp.length === 16) {
         if (alpha.indexOf(newInp[i]) > -1) {
@@ -362,15 +361,11 @@ validator.isCreditCard = function(input) {
     }
     
     if(isAlpha === true) {
-      console.log(true);
+      return true;
     }
     else if (isAlpha === false) {
-      throw "Enter valid credit card number";
+      return false;
     }
-  }
-  catch(err) {
-    console.log(err);
-  }
 };
 
 

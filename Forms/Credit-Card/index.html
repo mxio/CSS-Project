@@ -4,6 +4,7 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="credit.css">
 	<link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300italic,500,100italic,300,400italic,500italic,600,600italic,700,700italic,800,800italic,900,900italic' rel='stylesheet' type='text/css'>
+	<meta charset="UTF-8">
 </head>
 <body>
 
@@ -40,14 +41,14 @@
 
 	<h1>Checkout</h1>
 
-	<form>
+	<form id="form">
 		<label>Name on Card</label>
-		<input type="text" name="full-name">
+		<input id="name" type="text" name="full-name">
 		<div class="col-1"><label>Card Number</label></div>
 		<div class="col-2"><label>CSV</label></div>
 		<div class="col-3"><label>Expiration</label></div>
-		<input type="text" maxlength="19" class="col-1" name="card-num" placeholder="####-####-####-####"></div>
-		<input type="text" maxlength="3" name="csv" class="col-2">
+		<input id="card-num" type="text" maxlength="19" class="col-1" name="card-num" placeholder="####-####-####-####"></div>
+		<input id="csv" type="text" maxlength="3" name="csv" class="col-2">
 		<div class="col-3">
 			<select>
 				<option>01</option>
@@ -87,10 +88,11 @@
 			<input type="submit" value="Continue" class="submit">
 		<div>
 
-
 	</form>
-
 </div>
+
+<script src="../../validator.js" type="text/javascript"></script>
+<script src="credit.js" type="text/javascript"></script>
 
 </body>
 </html>
