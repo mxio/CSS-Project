@@ -1,3 +1,4 @@
+(function(window){
 var validator = {};
 
 
@@ -621,8 +622,8 @@ validator.isTrimmed = function(input) {
     return false;
 };
 
-
-
+window.validator = validator;
+})(window);
 
 
 
