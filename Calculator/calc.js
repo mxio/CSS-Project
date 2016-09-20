@@ -1,10 +1,15 @@
 
 function clickButton (value) {
-	if (value === "clear") {
+	if (value === "CLEAR") {
 		document.getElementById('screen').value = "";
-		return;
+	}
+	else if (value === "DEL") {
+		var length = document.getElementById('screen').value.length;
+		var deletedStr = document.getElementById('screen').value.substr(0, length - 1);
+		document.getElementById('screen').value = deletedStr;
 	}
 	else document.getElementById('screen').value += value;
+	return;
 }
 
 function plus () {
