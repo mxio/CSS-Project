@@ -5,6 +5,7 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Raleway:400,100,200,300italic,500,100italic,300,400italic,500italic,600,600italic,700,700italic,800,800italic,900,900italic' rel='stylesheet' type='text/css'>
+	<meta charset="UTF-8">
 </head>
 <body>
 
@@ -40,45 +41,46 @@
 
 <div class="container">
 <form>
-	<input type="text" class="screen">
+	<input id="screen" type="text" class="screen">
 </form>
 
 	<section class="buttons">
 		<div class="row-1">
-			<div class="button material-icons">settings</div>
-			<div class="button">DEL</div>
-			<div class="button">CLEAR</div>
-			<aside class="button">&divide;</aside>
+			<div class="button material-icons" value="settings" type="button" onclick="clickButton(this.value);">settings</div>
+			<div class="button" value="del" type="button" onclick="clickButton(this.value);">DEL</div>
+			<div class="button" value="clear" type="button" onclick="clickButton();">CLEAR</div>
+			<aside class="button" value="/" type="button" onclick="divide();">&divide;</aside>
 		</div>
 		<div>
-			<div class="button">&amp;</div>
-			<div class="button">(</div>
-			<div class="button">)</div>
-			<aside class="button">&#215;</aside>
+			<div class="button" value="and" type="button" onclick="and();">&amp;</div>
+			<div class="button" value="(" type="button" onclick="openPara();">(</div>
+			<div class="button" value=")" type="button" onclick="closePara();">)</div>
+			<aside class="button" value="*" onclick="multiply()">&#215;</aside>
 
-			<div class="button">7</div>
-			<div class="button">8</div>
-			<div class="button">9</div>
-			<aside class="button">-</aside>
+			<div class="button" value="7" type="button" onclick="clickButton(7);">7</div>
+			<div class="button" value="8" type="button" onclick="clickButton(8);">8</div>
+			<div class="button" value="9" type="button" onclick="clickButton(9);">9</div>
+			<aside class="button" value="-" type="button" onclick="minus();">-</aside>
 
-			<div class="button">4</div>
-			<div class="button">5</div>
-			<div class="button">6</div>
-			<aside class="button">+</aside>
+			<div class="button" value="4" type="button" onclick="clickButton(4);">4</div>
+			<div class="button" value="5" type="button" onclick="clickButton(5);">5</div>
+			<div class="button" value="6" type="button" onclick="clickButton(6);">6</div>
+			<aside class="button" value="+" type="button" onclick="plus();">+</aside>
 
-			<div class="button">1</div>
-			<div class="button">2</div>
-			<div class="button">3</div>
-			<aside class="button-eq">=</aside>
+			<div class="button" value="1" type="button" onclick="clickButton(1);">1</div>
+			<div class="button" value="2" type="button" onclick="clickButton(2);">2</div>
+			<div class="button" value="3" type="button" onclick="clickButton(3);">3</div>
+			<aside class="button-eq" value="=" type="button" onclick="calc();">=</aside>
 
 			<div class="bottom-row">
-				<div class="button-2">0</div>
-				<div class="button-3">.</div>
+				<div class="button-2" value="0" type="button" onclick="clickButton(0);">0</div>
+				<div class="button-3" value="." type="button" onclick="decimal();">.</div>
 			</div>
 		</div>
 	</section>
 
 </div>
 
+<script src="calc.js" type="text/javascript"></script>
 </body>
 </html>
