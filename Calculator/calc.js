@@ -8,6 +8,9 @@ function clickButton (value) {
 		var deletedStr = document.getElementById('screen').value.substr(0, length - 1);
 		document.getElementById('screen').value = deletedStr;
 	}
+	else if (value === "settings") {
+		document.getElementById('screen').value = "";
+	}
 	else document.getElementById('screen').value += value;
 	return;
 }
@@ -43,7 +46,6 @@ function closePara () {
 function decimal () {
 	document.getElementById('screen').value += '.';
 }
-
 
 function calc () {
 	var calc = eval(document.getElementById('screen').value);
