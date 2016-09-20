@@ -31,8 +31,8 @@ function divide () {
 	document.getElementById('screen').value += '/';
 }
 
-function and () {
-	document.getElementById('screen').value += '&';
+function percent () {
+	document.getElementById('screen').value += '%';
 }
 
 function openPara () {
