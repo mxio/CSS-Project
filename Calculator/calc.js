@@ -1,54 +1,91 @@
+var screen = document.getElementById('screen');
 
-function clickButton (value) {
-	if (value === "CLEAR") {
-		document.getElementById('screen').value = "";
-	}
-	else if (value === "DEL") {
-		var length = document.getElementById('screen').value.length;
-		var deletedStr = document.getElementById('screen').value.substr(0, length - 1);
-		document.getElementById('screen').value = deletedStr;
-	}
-	else if (value === "settings") {
-		document.getElementById('screen').value = "";
-	}
-	else document.getElementById('screen').value += value;
-	return;
+clear.onclick = function(){
+    screen.value = "";
 }
 
-function plus () {
-	document.getElementById('screen').value += '+';
+del.onclick = function() {
+	var length = screen.value.length;
+	var deletedStr = screen.value.substr(0, length - 1);
+	screen.value = deletedStr;
 }
 
-function minus () {
-	document.getElementById('screen').value += '-';
+settings.onclick = function () {
+	screen.value = ""
 }
 
-function multiply () {
-	document.getElementById('screen').value += '*';
-}
+decimal.addEventListener( 'click' , function(){  
+	screen.value += decimal.innerHTML;
+},false);
 
-function divide () {
-	document.getElementById('screen').value += '/';
-}
+num1.addEventListener( 'click' , function(){  
+	screen.value += num1.innerHTML;
+},false);
 
-function percent () {
-	document.getElementById('screen').value += '%';
-}
+num2.addEventListener( 'click' , function(){  
+	screen.value += num2.innerHTML;
+},false);
 
-function openPara () {
-	document.getElementById('screen').value += '(';
-}
+num3.addEventListener( 'click' , function(){  
+	screen.value += num3.innerHTML;
+},false);
 
-function closePara () {
-	document.getElementById('screen').value += ')';
-}
+num4.addEventListener( 'click' , function(){  
+	screen.value += num4.innerHTML;
+},false);
 
-function decimal () {
-	document.getElementById('screen').value += '.';
-}
+num5.addEventListener( 'click' , function(){  
+	screen.value += num5.innerHTML;
+},false);
 
-function calc () {
+num6.addEventListener( 'click' , function(){  
+	screen.value += num6.innerHTML;
+},false);
+
+num7.addEventListener( 'click' , function(){  
+	screen.value += num7.innerHTML;
+},false);
+
+num8.addEventListener( 'click' , function(){  
+	screen.value += num8.innerHTML;
+},false);
+
+num9.addEventListener( 'click' , function(){  
+	screen.value += num9.innerHTML;
+},false);
+
+num0.addEventListener( 'click' , function(){  
+	screen.value += num0.innerHTML;
+},false);
+
+plus.addEventListener('click', function() {
+	screen.value += '+';
+}, false);
+
+minus.addEventListener('click', function() {
+	screen.value += '-';
+}, false);
+
+multiply.addEventListener('click', function() {
+	screen.value += '*';
+}, false);
+
+divide.addEventListener('click', function() {
+	screen.value += '/';
+}, false);
+
+openingPara.addEventListener('click', function() {
+	screen.value += '(';
+}, false);
+
+closingPara.addEventListener('click', function() {
+	screen.value += ')';
+}, false);
+
+
+calc.addEventListener('click', function() {
 	var calc = eval(document.getElementById('screen').value);
 
-	document.getElementById('screen').value = calc;
-}
+	document.getElementById('screen').value = calc;;
+}, false);
+
