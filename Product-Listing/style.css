@@ -195,27 +195,12 @@ button.check {
 }
 
 .show {
+	display: block;
 	position: relative;
 	margin-top: -5%;
 	clear: both;
 	background-color: #F6F6F6;
 	padding: 0 0%;
-}
-
-.shop {
-	width: 10%;
-	background-color: #84C0CB;
-	padding: 3px 0;
-	border: none;
-	margin-top: 10px;;
-}
-
-.shop:hover {
-	background-color: #C5E3E8;
-}
-
-.shop:active {
-	background-color: #DE5F5A;
 }
 
 .checkout-btn {

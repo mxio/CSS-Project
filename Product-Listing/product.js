@@ -3,9 +3,17 @@ var shoppingCart = document.getElementById('shopping-cart');
 
 showCart.addEventListener('click', function(event) {
 	event.preventDefault();
-	shoppingCart.className = "show";
-}, false);
-
-shoppingCart.addEventListener('click', function(event) {
-	shoppingCart.className = "hide";
+	
+	if (showCart.innerHTML === "Show Cart") {
+		showCart.onclick = function () {
+			shoppingCart.className = "show";
+			showCart.innerHTML = "Hide Cart";
+		}
+	}
+	else if (showCart.innerHTML === "Hide Cart") {
+		showCart.onclick = function () {
+			shoppingCart.className = "hide";
+			showCart.innerHTML = "Show Cart";
+		}
+	}
 }, false);
