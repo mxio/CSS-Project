@@ -196,6 +196,7 @@ button.check {
 
 .show {
 	position: relative;
+	margin-top: -5%;
 	clear: both;
 	background-color: #F6F6F6;
 	padding: 0 0%;
