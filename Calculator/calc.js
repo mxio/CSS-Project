@@ -11,7 +11,7 @@ del.onclick = function() {
 }
 
 settings.onclick = function () {
-	screen.value = ""
+	screen.value = "";
 }
 
 decimal.addEventListener( 'click' , function(){  
