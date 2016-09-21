@@ -65,6 +65,10 @@ ul.navigation {
 }
 
 /*Product*/
+body {
+	margin: 0;
+}
+
 .container {
 	width: 80%;
 	margin: auto;
@@ -136,23 +140,6 @@ h5 {
     }
 } 
 
-.shop {
-	width: 80%;
-	background-color: #84C0CB;
-	padding: 3px 0;
-	border: none;
-	margin-left: 10%;
-	margin-top: 10px;
-}
-
-.shop:hover {
-	background-color: #C5E3E8;
-}
-
-.shop:active {
-	background-color: #DE5F5A;
-}
-
 .add {
 	margin-top: 1px;
 	float: right;
@@ -199,4 +186,42 @@ button.check {
 	float: right;
 	color: #BA545D;
 	margin-top: 8px;
+}
+
+/*Shopping cart*/
+
+.hide {
+	display: none;
+}
+
+.show {
+	position: relative;
+	clear: both;
+	background-color: #F6F6F6;
+	padding: 0 0%;
+}
+
+.shop {
+	width: 10%;
+	background-color: #84C0CB;
+	padding: 3px 0;
+	border: none;
+	margin-top: 10px;;
+}
+
+.shop:hover {
+	background-color: #C5E3E8;
+}
+
+.shop:active {
+	background-color: #DE5F5A;
+}
+
+.checkout-btn {
+	float: right;
+	width: 10%;
+	background-color: rgb(132, 192, 203);
+	padding: 3px 0px;
+	border: medium none;
+	margin-top: 10px;
 }
