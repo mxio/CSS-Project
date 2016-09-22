@@ -1,10 +1,10 @@
 var showCart = document.getElementById('show-cart');
 var shoppingCart = document.getElementById('shopping-cart');
 var addToCartIcons = document.querySelectorAll('.material-icons');
-var qty = document.getElementsByClassName('quantity');
 var cartOnPage = document.getElementById('cart-on-page');
 var shoppingCartTotalQty = document.getElementById('shopping-cart-total');
 var totalPrice = document.getElementById('shopping-cart-total-price');
+var itemTotal = document.getElementById('item-total');
 
 showCart.addEventListener('click', function(event) {
 	event.preventDefault();
@@ -23,6 +23,7 @@ showCart.addEventListener('click', function(event) {
 
 for (var i = 0; i < addToCartIcons.length; i++) {
 	addToCartIcons[i].addEventListener('click', function(event) {
+		event.preventDefault();
 		addToCart(event);
 	}, false); 
 }
@@ -36,8 +37,10 @@ function addToCart(event) {
 	cart.count += qtyValueToNum;
 	cartOnPage.innerHTML = cart.count;
 	shoppingCartTotalQty.innerHTML = cart.count;
-	var priceToNum = parseFloat(cart.items[0].price); 
-	totalPrice.innerHTML = "$" + priceToNum * cart.count;
+
+	itemTotal.innerHTML += cart.items[productID].name + " " + productQty + " $" + (productQty * cart.items[productID].price) + "<br>";
+	
+
 }
 
 
