@@ -3,6 +3,8 @@ var shoppingCart = document.getElementById('shopping-cart');
 var addToCart = document.getElementById('add-to-cart');
 var qty = document.getElementById('qty');
 var cartOnPage = document.getElementById('cart-on-page');
+var shoppingCartTotalQty = document.getElementById('shopping-cart-total');
+var totalPrice = document.getElementById('shopping-cart-total-price');
 
 showCart.addEventListener('click', function(event) {
 	event.preventDefault();
@@ -19,8 +21,10 @@ showCart.addEventListener('click', function(event) {
 }, false);
 
 addToCart.addEventListener('click', function(event) {
-	cart.count += qty.value;
+	var qtyValueToNum = parseInt(qty.value);
+	cart.count += qtyValueToNum;
 	cartOnPage.innerHTML = cart.count;
+	shoppingCartTotalQty.innerHTML = cart.count;
 }, false); 
 
 var cart = {
