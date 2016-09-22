@@ -25,6 +25,8 @@ addToCart.addEventListener('click', function(event) {
 	cart.count += qtyValueToNum;
 	cartOnPage.innerHTML = cart.count;
 	shoppingCartTotalQty.innerHTML = cart.count;
+	var priceToNum = parseFloat(cart.items[0].price); 
+	totalPrice.innerHTML = "$" + priceToNum * cart.count;
 }, false); 
 
 var cart = {
