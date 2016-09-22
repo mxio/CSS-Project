@@ -6,10 +6,10 @@ ul {
 ul.navigation {
 	list-style-type: none;
 	height: 42px;
-	width: 98.28%;
 	background-color: #191919;
-	margin-left: -10px;
-	margin-top: -9px;
+	margin: 0;
+	width: 100%;
+	padding: 0;
 }
 
 .navigation li {
@@ -45,8 +45,9 @@ ul.navigation {
 
 .logo {
 	float: left;
-	width: 62%;
-	margin-top: 12px; 
+	width: 40%;
+	margin-top: 12px;
+	padding-left: 35px;x; 
 }
 
 .nav {

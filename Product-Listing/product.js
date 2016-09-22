@@ -1,6 +1,8 @@
 var showCart = document.getElementById('show-cart');
 var shoppingCart = document.getElementById('shopping-cart');
-var addToCart = document.getElementsByClassName('add-to-cart');
+var addToCart = document.getElementById('add-to-cart');
+var qty = document.getElementById('qty');
+var cartOnPage = document.getElementById('cart-on-page');
 
 showCart.addEventListener('click', function(event) {
 	event.preventDefault();
@@ -17,7 +19,8 @@ showCart.addEventListener('click', function(event) {
 }, false);
 
 addToCart.addEventListener('click', function(event) {
-	//get current input's value
+	cart.count += qty.value;
+	cartOnPage.innerHTML = cart.count;
 }, false); 
 
 var cart = {
@@ -33,61 +36,61 @@ var cart = {
 			"name": "Tank",
 			"price": 10.99,
 			"count": 1
-		}
+		},
 		{
 			"id": "03",
 			"name": "Sweater",
 			"price": 19.99,
 			"count": 1
-		}
+		},
 		{
 			"id": "04",
 			"name": "Skirt",
 			"price": 16.99,
 			"count": 1
-		}
+		},
 		{
 			"id": "05",
 			"name": "Jean",
 			"price": 24.99,
 			"count": 1
-		}
+		},
 		{
 			"id": "06",
 			"name": "Pant",
 			"price": 27.99,
 			"count": 1
-		}
+		},
 		{
 			"id": "07",
 			"name": "Dress",
 			"price": 45.00,
 			"count": 1
-		}
+		},
 		{
 			"id": "08",
 			"name": "Shoe",
 			"price": 15.99,
 			"count": 1
-		}
+		},
 		{
 			"id": "Scarf",
 			"name": "Loose T-shirt",
 			"price": 8.99,
 			"count": 1
-		}
+		},
 		{
 			"id": "010",
 			"name": "Blouse",
 			"price": 29.99,
 			"count": 1
-		}
+		},
 		{
 			"id": "11",
 			"name": "Purse",
 			"price": 34.99,
 			"count": 1
-		}
+		},
 		{
 			"id": "12",
 			"name": "Sunglass",
