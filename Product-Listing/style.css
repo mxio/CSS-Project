@@ -124,7 +124,7 @@ h5 {
 .img {
 	width: 100%;
 	height: 200px;
-	background-color: #F6F6F6;
+	background-color: #f6f6f6;
 }
 
 .box {
@@ -157,11 +157,6 @@ h5 {
 .checkout {
 	clear: both;
 	padding-top: 50px;
-}
-
-.promo {
-	float: left;
-	color: #77858C;
 }
 
 .submit {
@@ -201,12 +196,14 @@ button.check {
 }
 
 .show {
-	display: block;
+	display: inline-block;
+	width: 100%;
 	position: relative;
 	margin-top: -2%;
 	clear: both;
 	background-color: #F6F6F6;
-	padding: 0 10% 4% 10%;
+	box-sizing: border-box;
+	padding: 0 10%;;
 }
 
 .checkout-btn {
@@ -223,12 +220,13 @@ button.check {
 }
 
 .col-1 {
-	width: 40%;
+	width: 20%;
 	float: left;
+	margin-left: 3%;
 }
 
 .col-2 {
-	width: 30%;
+	width: 20%;
 	float: left;
 	text-align: center;
 }
@@ -236,21 +234,45 @@ button.check {
 .col-3 {
 	float: left;
 	text-align: right;
-	width: 30%;
+	width: 42%;;
 }
 
 .total {
 	float: left;
 	clear: left;
-	width: 40%;
+	width: 150px;
+	margin-top: 25px;;
 }
 
 .total-price {
+	width: 51.6%;
+	float: left;
 	text-align: right;
+	margin-top: 25px;
 }
 
 .total-qty {
-	width: 30%;
+	text-align: right;
 	float: left;
-	text-align: center;
+	width: 33.5%;
+	margin-top: 25px;;
+}
+
+.shopping-cart-img {
+	background-color: #fff;
+	height: 150px;
+	width: 150px;
+	float: left;
+}
+
+.cart-row {
+	width: 100%;
+	float: left;
+	margin-top: 25px;
+}
+
+.promo {
+	float: left;
+	color: #77858C;
+	margin-top: 25px;
 }
