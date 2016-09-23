@@ -17,8 +17,8 @@ showCart.addEventListener('click', function(event) {
 	else if (showCart.innerHTML === "Hide Cart") {
 		shoppingCart.className = "hide";
 		showCart.innerHTML = "Show Cart";
-		
 	}
+
 }, false);
 
 
@@ -61,6 +61,12 @@ function addToCart(event) {
 	}
 
 	quantity.innerHTML = totalQty;
+
+	//show cart if quantity >= 1
+	if (totalQty >= 1) {
+		shoppingCart.className = "show";
+		showCart.innerHTML = "Hide Cart";
+	}
 }
 
 var priceTotal = [];
