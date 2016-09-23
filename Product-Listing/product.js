@@ -5,6 +5,7 @@ var cartOnPage = document.getElementById('cart-on-page');
 var shoppingCartTotalQty = document.getElementById('shopping-cart-total');
 var totalPrice = document.getElementById('shopping-cart-total-price');
 var itemTotal = document.getElementById('item-total');
+var quantity = document.getElementById('total-qty');
 
 showCart.addEventListener('click', function(event) {
 	event.preventDefault();
@@ -40,6 +41,7 @@ function addToCart(event) {
 
 	itemTotal.innerHTML += '<div class="col-1">' + cart.items[productID].name + "</div>" + " " + '<div class="col-2">' + productQty + "</div>" + '<div class="col-3">$' + (productQty * cart.items[productID].price) + "</div>";
 	
+	//Price Total
 	priceTotal.push(productQty * cart.items[productID].price);
 
 	var total = 0;
@@ -48,10 +50,21 @@ function addToCart(event) {
     	total += priceTotal[e];
 	}
 	
-	shoppingCartTotalQty.innerHTML = "$" + parseFloat(total);
+	shoppingCartTotalQty.innerHTML = "$" + parseFloat(total).toFixed(2);
+
+	//Qty Total
+	qtyTotal.push(qtyValueToNum);
+	var totalQty = 0;
+
+	for (var j = 0; j < qtyTotal.length; j++) {
+		totalQty += qtyTotal[j];
+	}
+
+	quantity.innerHTML = totalQty;
 }
 
 var priceTotal = [];
+var qtyTotal = [];
 
 var cart = {
 	"items": [

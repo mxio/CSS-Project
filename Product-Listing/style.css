@@ -242,8 +242,15 @@ button.check {
 .total {
 	float: left;
 	clear: left;
+	width: 40%;
 }
 
 .total-price {
 	text-align: right;
+}
+
+.total-qty {
+	width: 30%;
+	float: left;
+	text-align: center;
 }
