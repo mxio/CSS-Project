@@ -7,6 +7,7 @@ var totalPrice = document.getElementById('shopping-cart-total-price');
 var itemTotal = document.getElementById('item-total');
 var quantity = document.getElementById('total-qty');
 
+
 showCart.addEventListener('click', function(event) {
 	event.preventDefault();
 
@@ -39,7 +40,7 @@ function addToCart(event) {
 	cartOnPage.innerHTML = cart.count;
 
 
-	itemTotal.innerHTML += '<div class="cart-row"><div class="shopping-cart-img"><img src="#"></div>' + '<div class="col-1">' + cart.items[productID].name + "</div>" + " " + '<div class="col-2"><form><input class="box" type="text" value="' + productQty + '"></input></form><button>Change Quantity</button></div>' + '<div class="col-3">$' + (productQty * cart.items[productID].price) + "</div></div>";
+	itemTotal.innerHTML += '<div class="cart-row"><div class="shopping-cart-img"><img src="#"></div>' + '<div class="col-1">' + cart.items[productID].name + "</div>" + " " + '<div class="col-2"><form><input class="box cart-qty-box" type="text" value="' + productQty + '"></input></form><button class="change" href="#">Change Quantity</button></div>' + '<div class="col-3">$' + (productQty * cart.items[productID].price) + "</div></div>";
 	
 	
 	//Price Total
@@ -68,10 +69,31 @@ function addToCart(event) {
 		shoppingCart.className = "show";
 		showCart.innerHTML = "Hide Cart";
 	}
+
+	var changeQty = document.querySelectorAll('.change');
+
+	//change quantity text boxes
+	for (var a = 0; a < changeQty.length; a++) {
+		changeQty[a].addEventListener('click', function(event) {
+			event.preventDefault();
+			changeQuantity(event);
+		}, false); 
+	}
+
+	function changeQuantity(event) {
+		var qtyBoxParent = event.target.parentNode.parentNode;
+		var qtyBox = qtyBoxParent.querySelector('.cart-qty-box').value;
+		alert(qtyBox);
+		var qtyValueToNum = parseInt(qtyBox);
+		cart.count += qtyValueToNum;
+		cartOnPage.innerHTML = cart.count;
+	}
 }
 
 var priceTotal = [];
 var qtyTotal = [];
+
+
 
 var cart = {
 	"items": [
