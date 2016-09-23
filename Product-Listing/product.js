@@ -34,13 +34,13 @@ function addToCart(event) {
 	var productID = product.id;
 	var productQty = product.querySelector('.quantity').value;
 
-
 	var qtyValueToNum = parseInt(productQty);
 	cart.count += qtyValueToNum;
 	cartOnPage.innerHTML = cart.count;
 
 
-	itemTotal.innerHTML += '<div class="cart-row"><div class="shopping-cart-img"><img src="#"></div>' + '<div class="col-1">' + cart.items[productID].name + "</div>" + " " + '<div class="col-2">' + productQty + "</div>" + '<div class="col-3">$' + (productQty * cart.items[productID].price) + "</div></div>";
+	itemTotal.innerHTML += '<div class="cart-row"><div class="shopping-cart-img"><img src="#"></div>' + '<div class="col-1">' + cart.items[productID].name + "</div>" + " " + '<div class="col-2"><form><input class="box" type="text" value="' + productQty + '"></input></form><button>Change Quantity</button></div>' + '<div class="col-3">$' + (productQty * cart.items[productID].price) + "</div></div>";
+	
 	
 	//Price Total
 	priceTotal.push(productQty * cart.items[productID].price);
