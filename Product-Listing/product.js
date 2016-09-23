@@ -36,14 +36,21 @@ function addToCart(event) {
 	var qtyValueToNum = parseInt(productQty);
 	cart.count += qtyValueToNum;
 	cartOnPage.innerHTML = cart.count;
-	shoppingCartTotalQty.innerHTML = cart.count;
 
 	itemTotal.innerHTML += cart.items[productID].name + " " + productQty + " $" + (productQty * cart.items[productID].price) + "<br>";
 	
+	//store price in object, loop to sum price
+	var priceTotal = {};
+	//how do I add price to object with each click?
+	priceTotal.key = productQty * cart.items[productID].price;
+	var total = 0;
 
+	for (var e in priceTotal) {
+    	total += priceTotal[e];
+	}
+	
+	shoppingCartTotalQty.innerHTML = total;
 }
-
-
 
 
 var cart = {
