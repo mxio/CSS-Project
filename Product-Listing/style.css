@@ -221,3 +221,29 @@ button.check {
 .cart-content {
 	padding-top: 3%;
 }
+
+.col-1 {
+	width: 40%;
+	float: left;
+}
+
+.col-2 {
+	width: 30%;
+	float: left;
+	text-align: center;
+}
+
+.col-3 {
+	float: left;
+	text-align: right;
+	width: 30%;
+}
+
+.total {
+	float: left;
+	clear: left;
+}
+
+.total-price {
+	text-align: right;
+}
