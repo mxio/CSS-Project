@@ -40,7 +40,7 @@ function addToCart(event) {
 	cartOnPage.innerHTML = cart.count;
 
 
-	itemTotal.innerHTML += '<div class="cart-row"><div class="shopping-cart-img"><img src="#"></div>' + '<div class="col-1">' + cart.items[productID].name + "</div>" + " " + '<div class="col-2"><form><input class="box cart-qty-box" type="text" value="' + productQty + '"></input></form><button class="change" href="#">Change Quantity</button></div>' + '<div class="col-3">$' + (productQty * cart.items[productID].price) + "</div></div>";
+	itemTotal.innerHTML += '<section class="cart-row"><div class="shopping-cart-img"><img src="#"></div>' + '<div class="col-1">' + cart.items[productID].name + "</div>" + " " + '<div class="col-2"><form><input class="box cart-qty-box" type="text" value="' + productQty + '"></input></form><button class="change" href="#">Change Quantity</button></div>' + '<div class="col-3">$' + (productQty * cart.items[productID].price) + "</div></section>";
 	
 	
 	//Price Total
@@ -83,10 +83,18 @@ function addToCart(event) {
 	function changeQuantity(event) {
 		var qtyBoxParent = event.target.parentNode.parentNode;
 		var qtyBox = qtyBoxParent.querySelector('.cart-qty-box').value;
-		alert(qtyBox);
+		
+		var cartRowParent = qtyBoxParent.parentNode;
+		var child = cartRowParent.querySelector('section');
+		
 		var qtyValueToNum = parseInt(qtyBox);
+		cart.count = 0;
 		cart.count += qtyValueToNum;
 		cartOnPage.innerHTML = cart.count;
+
+		if (qtyValueToNum === 0) {
+			cartRowParent.remove(child.lastChild);
+		}
 	}
 }
 
