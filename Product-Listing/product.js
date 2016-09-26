@@ -93,7 +93,7 @@ function addToCart(event) {
 		cartOnPage.innerHTML = cart.count;
 
 		if (qtyValueToNum === 0) {
-			cartRowParent.remove(child.lastChild);
+			qtyBoxParent.remove(child.lastChild);
 		}
 	}
 }
