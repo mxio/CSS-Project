@@ -30,7 +30,7 @@ function add(id) {
     var productName = product.querySelector('.name').innerHTML;
     var productPrice = product.querySelector('.price').innerHTML;
     	productPrice = parseFloat(productPrice.substr(1, 5)).toFixed(2);
-    	index = findIndex();
+    	index = findIndex(id);
 
 	item = {
         "id": productID,
@@ -43,41 +43,60 @@ function add(id) {
     //if item's id does not exist, push to cart, else change qty
     if (index === -1) {	
 	    cart.items.push(item);
-    	cart.count += item.quantity;
     }
-    else cart.items[index].quantity += item.quantity; 
-    	cart.items[index].totalPrice = cart.items[index].price * cart.items[index].quantity; 
-    
-    if (cart.count > 0) {
-		shoppingCart.className = "show";
-		showCart.innerHTML = "Hide Cart";
-	}
+    else {
+    	cart.items[index].quantity += productQty;
+    	cart.items[index].totalPrice = cart.items[index].price * cart.items[index].quantity;
+    }
+
+    totals();
+
+    //call function to show cart if there is at least one item in cart
+    showCartOne();
 
 	//call function to populate shopping cart
 	populateShoppingCart();
 }
 
 //find index of item in cart items 
-function findIndex() {
+function findIndex(id) {
 	var indexOf = -1;
 
 	for (var i = 0; i < cart.items.length; i++) {
-		if (item.id === cart.items[i].id) {
+		if (id === cart.items[i].id) {
 			indexOf = cart.items.indexOf(cart.items[i]);
 		}
 	}
 	return indexOf;
 }
 
+function showCartOne() {
+    if (cart.count >= 1) {
+		shoppingCart.className = "show";
+		showCart.innerHTML = "Hide Cart";
+	}
+}
+
 //populate shopping cart
 function populateShoppingCart() {
-		itemTotal.innerHTML += '<section class="cart-row"><div class="shopping-cart-img"><img src="#"></div>' + '<div class="col-1">' + cart.items[index].name + "</div>" + " " + '<div class="col-2"><form><input class="box cart-qty-box" value="' + cart.items[index].quantity + '"></input></form><button class="change" href="#">Change Quantity</button></div>' + '<div class="col-3">$' + cart.items[index].totalPrice + "</div></section>";
+	itemTotal.innerHTML += '<section class="cart-row"><div class="shopping-cart-img"><img src="#"></div>' + '<div class="col-1">' + cart.items[index].name + "</div>" + " " + '<div class="col-2"><form><input class="box cart-qty-box" value="' + cart.items[index].quantity + '"></input></form><button class="change" href="#">Change Quantity</button></div>' + '<div class="col-3">$' + cart.items[index].totalPrice + "</div></section>";
 
 }
 
 //change quantity in shopping cart
 
 //totals
+function totals() {
+	cart.count = 0;
+	cart.total = 0;
+
+	for (var j = 0; j < cart.items.length; j++) {
+		cart.count += cart.items[j].quantity;
+		cart.total += cart.items[j].totalPrice;
+	}
+	return cart.count;
+	return
+}
 	//loop for quantity total
 	//loop for price total
 
