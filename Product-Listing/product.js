@@ -30,7 +30,7 @@ function add(id) {
     var productName = product.querySelector('.name').innerHTML;
     var productPrice = product.querySelector('.price').innerHTML;
     	productPrice = parseFloat(productPrice.substr(1, 5)).toFixed(2);
-    var index = findIndex();
+    	index = findIndex();
 
 	item = {
         "id": productID,
@@ -52,6 +52,9 @@ function add(id) {
 		shoppingCart.className = "show";
 		showCart.innerHTML = "Hide Cart";
 	}
+
+	//call function to populate shopping cart
+	populateShoppingCart();
 }
 
 //find index of item in cart items 
@@ -61,13 +64,16 @@ function findIndex() {
 	for (var i = 0; i < cart.items.length; i++) {
 		if (item.id === cart.items[i].id) {
 			indexOf = cart.items.indexOf(cart.items[i]);
-			alert(indexOf);
 		}
 	}
 	return indexOf;
 }
 
 //populate shopping cart
+function populateShoppingCart() {
+		itemTotal.innerHTML += '<section class="cart-row"><div class="shopping-cart-img"><img src="#"></div>' + '<div class="col-1">' + cart.items[index].name + "</div>" + " " + '<div class="col-2"><form><input class="box cart-qty-box" value="' + cart.items[index].quantity + '"></input></form><button class="change" href="#">Change Quantity</button></div>' + '<div class="col-3">$' + cart.items[index].totalPrice + "</div></section>";
+
+}
 
 //change quantity in shopping cart
 
