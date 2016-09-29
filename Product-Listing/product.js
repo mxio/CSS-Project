@@ -47,6 +47,7 @@ function add(id) {
 	    cart.items.push(item);
     }
     else {
+    	document.getElementById("section"+cart.items[index].id).remove();
     	cart.items[index].quantity += productQty;
     	cart.items[index].totalPrice = cart.items[index].price * cart.items[index].quantity;
     }
@@ -80,23 +81,26 @@ function populateShoppingCart(index, id) {
 		//index is undefined so need to add the variable here again while passing index and id as parameters
 		var index = findIndex(id);
 
-		itemTotal.innerHTML += '<section class="cart-row"><div class="shopping-cart-img"><img src="#"></div>' + '<div class="col-1">' + cart.items[index].name + "</div>" + " " + '<div class="col-2"><form><input class="box cart-qty-box" value="' + cart.items[index].quantity + '"></input></form><button class="change" href="#">Change Quantity</button></div>' + '<div class="col-3">$' + cart.items[index].totalPrice + "</div></section>";
+		itemTotal.innerHTML += '<section id="section'+cart.items[index].id+'" class="cart-row"><div class="shopping-cart-img"><img src="#"></div>' + '<div class="col-1">' + cart.items[index].name + "</div>" + " " + '<div class="col-2"><form><input class="box cart-qty-box" value="' + cart.items[index].quantity + '"></input></form><button class="change" itemid="'+cart.items[index].id+'" href="#">Change Quantity</button></div>' + '<div class="col-3">$' + cart.items[index].totalPrice + "</div></section>";
 
 	changeQty(index, id);
 }
 
 //change quantity in shopping cart
 function changeQty(index, id) {
+	
 	var changeQty = document.querySelectorAll('.change');
 	var	index = findIndex(id);
 	for (var a = 0; a < changeQty.length; a++) {
 		changeQty[a].addEventListener('click', function(event) {
+			debugger;
 			event.preventDefault();
-			changeQuantity(event, index, id);
+			changeQuantity(event, index, this.getAttribute("itemid"));//get id of current item's button in cart
 		}, false); 
 	}
 
 	function changeQuantity(event, index, id) {
+		
 		var	index = findIndex(id);
 		var qtyBoxParent = event.target.parentNode.parentNode;
 		var qtyBox = parseInt(qtyBoxParent.querySelector('.cart-qty-box').value);
