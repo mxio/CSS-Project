@@ -7,6 +7,7 @@ var itemTotal = document.getElementById('item-total');
 var shoppingCartTotalQty = document.getElementById('shopping-cart-total');
 var addToCartIcons = document.querySelectorAll('.material-icons');
 
+
 showCart.addEventListener('click', function(event) {
 	event.preventDefault();
 
@@ -21,6 +22,7 @@ showCart.addEventListener('click', function(event) {
 }, false);
 
 
+
 //add or update
 function add(id) {
 
@@ -30,7 +32,7 @@ function add(id) {
     var productName = product.querySelector('.name').innerHTML;
     var productPrice = product.querySelector('.price').innerHTML;
     	productPrice = parseFloat(productPrice.substr(1, 5)).toFixed(2);
-    	index = findIndex(id);
+   	var	index = findIndex(id);
 
 	item = {
         "id": productID,
@@ -50,12 +52,8 @@ function add(id) {
     }
 
     totals();
-
-    //call function to show cart if there is at least one item in cart
     showCartOne();
-
-	//call function to populate shopping cart
-	populateShoppingCart();
+    populateShoppingCart(index, id);
 }
 
 //find index of item in cart items 
@@ -78,15 +76,46 @@ function showCartOne() {
 }
 
 //populate shopping cart
-function populateShoppingCart() {
-	itemTotal.innerHTML += '<section class="cart-row"><div class="shopping-cart-img"><img src="#"></div>' + '<div class="col-1">' + cart.items[index].name + "</div>" + " " + '<div class="col-2"><form><input class="box cart-qty-box" value="' + cart.items[index].quantity + '"></input></form><button class="change" href="#">Change Quantity</button></div>' + '<div class="col-3">$' + cart.items[index].totalPrice + "</div></section>";
+function populateShoppingCart(index, id) {
+		//index is undefined so need to add the variable here again while passing index and id as parameters
+		var index = findIndex(id);
 
+		itemTotal.innerHTML += '<section class="cart-row"><div class="shopping-cart-img"><img src="#"></div>' + '<div class="col-1">' + cart.items[index].name + "</div>" + " " + '<div class="col-2"><form><input class="box cart-qty-box" value="' + cart.items[index].quantity + '"></input></form><button class="change" href="#">Change Quantity</button></div>' + '<div class="col-3">$' + cart.items[index].totalPrice + "</div></section>";
+
+	changeQty(index, id);
 }
 
 //change quantity in shopping cart
+function changeQty(index, id) {
+	var changeQty = document.querySelectorAll('.change');
+
+	for (var a = 0; a < changeQty.length; a++) {
+		changeQty[a].addEventListener('click', function(event) {
+			event.preventDefault();
+			changeQuantity(event);
+		}, false); 
+	}
+
+	function changeQuantity(event) {
+		var qtyBoxParent = event.target.parentNode.parentNode;
+		var qtyBox = parseInt(qtyBoxParent.querySelector('.cart-qty-box').value);
+		
+		var cartRowParent = qtyBoxParent.parentNode;
+		var child = cartRowParent.querySelector('section');
+
+		if (qtyBox === 0) {
+			qtyBoxParent.remove(child);
+			//splice item from cart array
+			cart.items.splice(index, 1);
+			//update totals
+			totals();
+		}
+	}
+}
 
 //totals
 function totals() {
+	//set these to 0 to so they don't store the initial values from the click ie: 2+1 = 3, not 2+2+1 = 4
 	cart.count = 0;
 	cart.total = 0;
 
@@ -94,15 +123,14 @@ function totals() {
 		cart.count += cart.items[j].quantity;
 		cart.total += cart.items[j].totalPrice;
 	}
-	return cart.count;
-	return
+	
+	quantity.innerHTML = cart.count;
+	shoppingCartTotalQty.innerHTML = "$" + parseFloat(cart.total).toFixed(2);
+	cartOnPage.innerHTML = cart.count;
 }
-	//loop for quantity total
-	//loop for price total
 
-//add event listener to each icon
 
-var cart = {
+cart = {
 	"items": [
 		
 	],
