@@ -5,7 +5,7 @@ var quantity = document.getElementById('total-qty');
 var cartOnPage = document.getElementById('cart-on-page');
 var itemTotal = document.getElementById('item-total');
 var shoppingCartTotalQty = document.getElementById('shopping-cart-total');
-var addToCartIcons = document.querySelectorAll('.material-icons');
+
 
 
 showCart.addEventListener('click', function(event) {
@@ -88,28 +88,33 @@ function populateShoppingCart(index, id) {
 //change quantity in shopping cart
 function changeQty(index, id) {
 	var changeQty = document.querySelectorAll('.change');
-
+	var	index = findIndex(id);
 	for (var a = 0; a < changeQty.length; a++) {
 		changeQty[a].addEventListener('click', function(event) {
 			event.preventDefault();
-			changeQuantity(event);
+			changeQuantity(event, index, id);
 		}, false); 
 	}
 
-	function changeQuantity(event) {
+	function changeQuantity(event, index, id) {
+		var	index = findIndex(id);
 		var qtyBoxParent = event.target.parentNode.parentNode;
 		var qtyBox = parseInt(qtyBoxParent.querySelector('.cart-qty-box').value);
 		
 		var cartRowParent = qtyBoxParent.parentNode;
 		var child = cartRowParent.querySelector('section');
-
+		
 		if (qtyBox === 0) {
 			qtyBoxParent.remove(child);
-			//splice item from cart array
+			//remove item from cart array
 			cart.items.splice(index, 1);
-			//update totals
-			totals();
 		}
+		else {
+			cart.items[index].quantity = qtyBox;
+			cart.items[index].totalPrice = cart.items[index].quantity * cart.items[index].price;
+			alert("testing");
+		}
+		totals();
 	}
 }
 
