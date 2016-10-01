@@ -150,58 +150,89 @@ function applyPromo() {
 	var promo = document.getElementById('promo');
 
 	if (promo.value === "TANKS16") {
-  		//push promo to inUse
-  		cart.inUse.push(cart.promo[0])
-  		//apply discount to tank
   		for (var j = 0; j < cart.items.length; j++) {
-  			if (cart.inUse[0].name === "5PERCENT") {
-    			shoppingCartTotalQty.innerHTML = "$" + parseFloat(cart.total).toFixed(2);
-    			cart.inUse.pop();
+
+  			if (cart.inUse.length == 0) { 
+    			if (cart.items[j].name === "Tank") {
+
+    				cart.items[j].totalPrice = cart.items[j].totalPrice - (cart.items[j].totalPrice * cart.promo[0].percent);
+  					totals();
+  					tankTotalOne = cart.total
+
+      				shoppingCartTotalQty.innerHTML = "$" + parseFloat(tankTotalOne).toFixed(2);
+    			}
     		}
-    		else if (cart.items[j].name === "Tank") {
-      			shoppingCartTotalQty.innerHTML = "$" + parseFloat(cart.total - (cart.items[j].totalPrice * cart.promo[0].percent)).toFixed(2);
+
+	  		if (cart.inUse[0].name === "5PERCENT") {
+  				if (cart.items[j].name === "Tank") {
+  					//push promo to inUse
+  					cart.inUse.push(cart.promo[0]);
+
+  					cart.items[j].totalPrice = cart.items[j].totalPrice - (cart.items[j].totalPrice * cart.promo[0].percent);
+  					totals();
+  					tankTotal = cart.total;
+
+  					if (tankTotal < totalBeforePromoApply) {
+		    			shoppingCartTotalQty.innerHTML = "$" + parseFloat(tankTotal).toFixed(2);
+    					cart.inUse.pop();
+    				}
+    				else {
+      					shoppingCartTotalQty.innerHTML = "$" + parseFloat(totalBeforePromoApply).toFixed(2);
+  				    	cart.inUse.pop(); //removes ACCESS16 code
+    				}
+    			}
     		}
   		}
 	}	
 	else if (promo.value === "ACCESS16") {
   		for (var e = 0; e < cart.items.length; e++) {
+  			
+  			if (cart.inUse.length == 0) {
+	  			if (cart.items[e].name === "Scarf") {
+
+	  				//set total of scarves promo to compare with 5 percent promo
+           	 		cart.items[e].totalPrice = cart.items[e].totalPrice - (cart.items[e].totalPrice * cart.promo[1].percent);
+  					totals();
+  					scarvesTotalOne = cart.total
+
+      				shoppingCartTotalQty.innerHTML = "$" + parseFloat(scarvesTotalOne).toFixed(2);
+    			}
+    		}
+  			
   			if (cart.inUse[0].name === "5PERCENT") {
                 if(cart.items[e].name === "Scarf") {
                 	cart.inUse.push(cart.promo[1]);
 
                 	//set total of scarves promo to compare with 5 percent promo
-                	cart.items[e].totalPrice = cart.items[e].totalPrice - (cart.items[e].totalPrice * cart.promo[1].percent);
+           			 cart.items[e].totalPrice = cart.items[e].totalPrice - (cart.items[e].totalPrice * cart.promo[1].percent);
   					totals();
   					scarvesTotal = cart.total;
 
   					if (scarvesTotal < totalBeforePromoApply) {
-  						alert("correct promo");
-    					cart.inUse.shift(); //remove the first code which is 5 % code
+  						//remove the first code which is 5 % code
+    					cart.inUse.shift(); 
     					totals();
       					shoppingCartTotalQty.innerHTML = "$" + parseFloat(scarvesTotal).toFixed(2);
-      				}else{
+      				}
+      				else {
       					shoppingCartTotalQty.innerHTML = "$" + parseFloat(totalBeforePromoApply).toFixed(2);
-  				    	cart.inUse.pop(); //removes ACCESS16 code 
+      					//removes ACCESS16 code
+  				    	cart.inUse.pop(); 
       				}
       			}
-    		}
-    		else if (cart.items[e].name === "Scarf") {
-    			cart.items[e].totalPrice = cart.items[e].totalPrice - (cart.items[e].totalPrice * cart.promo[1].percent); 
-    			totals();
-      			shoppingCartTotalQty.innerHTML = "$" + parseFloat(cart.total).toFixed(2);
     		}
   		}
 	}
 	else if (promo.value === "5PERCENT") {
 		if(cart.inUse.length == 0){
-  		cart.inUse.push(cart.promo[2]);
-  		//apply discount to total 
-  		cart.total = cart.total - (cart.total * cart.promo[2].percent);
-  		shoppingCartTotalQty.innerHTML = "$" + parseFloat(cart.total).toFixed(2);
-  		//store this cart.total to compare with other promo totals
-  		totalBeforePromoApply = cart.total
+  			cart.inUse.push(cart.promo[2]);
+  			//apply discount to total 
+  			cart.total = cart.total - (cart.total * cart.promo[2].percent);
+  			shoppingCartTotalQty.innerHTML = "$" + parseFloat(cart.total).toFixed(2);
+  			//store this cart.total to compare with other promo totals
+  			totalBeforePromoApply = cart.total
   	    }
-  	    else{
+  	    else {
   	    	alert("Sorry only one promo code allowed.");
   	    }
 	}
