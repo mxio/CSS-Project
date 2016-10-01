@@ -164,31 +164,23 @@ function applyPromo() {
   		}
 	}	
 	else if (promo.value === "ACCESS16") {
-		//it isn't pushing this promo code to the array unless it is the first code being used
-  		cart.inUse.push(cart.promo[1]);
-  		
   		for (var e = 0; e < cart.items.length; e++) {
-  			//sets the cart total when ACCESS16 promo is applied
-  			cart.items[e].totalPrice = cart.items[e].totalPrice - (cart.items[e].totalPrice * cart.promo[1].percent);
-  			totals();
-  			//have to move this variable down here in order to get the new total, not current total from 5PERCENT promo
-  			scarvesTotal = cart.total;
-  			alert("wrong");
-  		
-  			//this code is not being run at all
   			if (cart.inUse[0].name === "5PERCENT") {
                 if(cart.items[e].name === "Scarf") {
                 	cart.inUse.push(cart.promo[1]);
-                	//it is not checking scarvesTotal against cart.total
-  					if (scarvesTotal < cart.total) {
+
+                	//set total of scarves promo to compare with 5 percent promo
+                	cart.items[e].totalPrice = cart.items[e].totalPrice - (cart.items[e].totalPrice * cart.promo[1].percent);
+  					totals();
+  					scarvesTotal = cart.total;
+
+  					if (scarvesTotal < totalBeforePromoApply) {
   						alert("correct promo");
     					cart.inUse.shift(); //remove the first code which is 5 % code
-    					cart.total = cart.total + (cart.total * cart.promo[2].percent); //add back the amount from 5%
-    					cart.items[e].totalPrice = cart.items[e].totalPrice - (cart.items[e].totalPrice * cart.promo[1].percent); 
     					totals();
-      					shoppingCartTotalQty.innerHTML = "$" + parseFloat(cart.total).toFixed(2);
+      					shoppingCartTotalQty.innerHTML = "$" + parseFloat(scarvesTotal).toFixed(2);
       				}else{
-      					shoppingCartTotalQty.innerHTML = "$" + parseFloat(cart.total).toFixed(2);
+      					shoppingCartTotalQty.innerHTML = "$" + parseFloat(totalBeforePromoApply).toFixed(2);
   				    	cart.inUse.pop(); //removes ACCESS16 code 
       				}
       			}
@@ -203,9 +195,11 @@ function applyPromo() {
 	else if (promo.value === "5PERCENT") {
 		if(cart.inUse.length == 0){
   		cart.inUse.push(cart.promo[2]);
-  		//apply discount to total
+  		//apply discount to total 
   		cart.total = cart.total - (cart.total * cart.promo[2].percent);
   		shoppingCartTotalQty.innerHTML = "$" + parseFloat(cart.total).toFixed(2);
+  		//store this cart.total to compare with other promo totals
+  		totalBeforePromoApply = cart.total
   	    }
   	    else{
   	    	alert("Sorry only one promo code allowed.");
