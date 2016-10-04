@@ -89,6 +89,6 @@ percent.addEventListener('click', function() {
 calc.addEventListener('click', function() {
 	var calc = eval(document.getElementById('screen').value);
 
-	document.getElementById('screen').value = calc;;
+	document.getElementById('screen').value = calc;
 }, false);
 
