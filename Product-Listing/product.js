@@ -234,13 +234,13 @@ function applyPromo()
 			return;
 		}
 		if (cart.oldPromo === "ACCESS16" && promoEntered === "TANKS16") {
-			if (cart.tank16Discount < cart.access16Discount && cart.tank16Discount < cart.fivePercentDiscount) {
+			if (cart.tank16Discount < cart.access16Discount) {
 				// apply promo
 				//update html total to be tank16Discount
 				calculateTank16Discount();
 				cart.oldPromo = promoEntered;
 			}
-			else if (cart.tank16Discount > cart.access16Discount && cart.access16Discount < cart.fivePercentDiscount) {
+			else if (cart.tank16Discount > cart.access16Discount) {
 				calculateAccess16PDiscount();
 				cart.oldPromo = "ACCESS16";
 			}
@@ -249,7 +249,7 @@ function applyPromo()
 		}
 		if (cart.oldPromo === "5PERCENT" && promoEntered === "TANKS16") {
 			// check if TANK16 discount is bigger than 5Percent
-			if (cart.tank16Discount < cart.fivePercentDiscount && cart.tank16Discount < cart.access16Discount) {
+			if (cart.tank16Discount < cart.fivePercentDiscount) {
 				//apply promo
 				calculateTank16Discount();
 				cart.oldPromo = promoEntered;
@@ -275,12 +275,13 @@ function applyPromo()
 			return;
 		}
 		if (cart.oldPromo === "TANKS16" && promoEntered === "ACCESS16") {
-			if (cart.access16Discount < cart.tank16Discount && cart.access16Discount < cart.fivePercentDiscount) {
+			if (cart.access16Discount < cart.tank16Discount) {
 				// apply promo
 				calculateAccess16PDiscount();
 				cart.oldPromo = promoEntered;
 			}
-			else if (cart.access16Discount > cart.tank16Discount && cart.tank16Discount < cart.fivePercentDiscount) {
+			else if (cart.access16Discount > cart.tank16Discount) {
+				alert("working")
 				calculateTank16Discount();
 				cart.oldPromo = "TANKS16";
 			}
@@ -288,12 +289,12 @@ function applyPromo()
 		}
 		if (cart.oldPromo === "5PERCENT" && promoEntered === "ACCESS16") {
 			// check if TANK16 discount is bigger than 5Percent
-			if (cart.access16Discount < cart.fivePercentDiscount && cart.access16Discount < cart.tank16Discount) {
+			if (cart.access16Discount < cart.fivePercentDiscount) {
 				//apply promo
 				calculateAccess16PDiscount();
 				cart.oldPromo = "ACCESS16";
 			}
-			else if (cart.access16Discount > cart.fivePercentDiscount && cart.fivePercentDiscount < cart.tank16Discount) {
+			else if (cart.access16Discount > cart.fivePercentDiscount) {
 			calculateFivePercentDiscount();
 			cart.oldPromo = "5PERCENT";
 			}
@@ -313,12 +314,12 @@ function applyPromo()
 			return;
 		}
 		if (cart.oldPromo === "ACCESS16" && promoEntered === "5PERCENT") {
-			if (cart.fivePercentDiscount < cart.access16Discount && cart.fivePercentDiscount < cart.tank16Discount) {
+			if (cart.fivePercentDiscount < cart.access16Discount) {
 				// apply promo
 				calculateFivePercentDiscount();
 				cart.oldPromo = promoEntered;
 			}
-			else if (cart.fivePercentDiscount > cart.access16Discount && cart.access16Discount < cart.tank16Discount) {
+			else if (cart.fivePercentDiscount > cart.access16Discount) {
 				calculateAccess16PDiscount();
 				cart.oldPromo = "ACCESS16";
 			}
@@ -326,12 +327,13 @@ function applyPromo()
 		}
 		if (cart.oldPromo === "TANKS16" && promoEntered === "5PERCENT") {
 			// check if TANK16 discount is bigger than 5Percent
-			if (cart.fivePercentDiscount < cart.tank16Discount && cart.fivePercentDiscount < cart.access16Discount) {
+			if (cart.fivePercentDiscount < cart.tank16Discount) {
 				//apply promo
+				alert("yes");
 				calculateFivePercentDiscount();
 				cart.oldPromo = "5PERCENT";
 			}
-			else if (cart.fivePercentDiscount > cart.tank16Discount && cart.tank16Discount < cart.access16Discount) {
+			else if (cart.fivePercentDiscount > cart.tank16Discount) {
 				calculateTank16Discount();
 				cart.oldPromo = "TANKS16";
 			}
