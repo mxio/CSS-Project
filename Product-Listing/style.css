@@ -210,9 +210,11 @@ button.check {
 	float: right;
 	width: 10%;
 	background-color: rgb(132, 192, 203);
-	padding: 3px 0px;
+	padding: 8px 3px;
 	border: medium none;
 	margin-top: 10px;
+	color: #fff;
+	font-size: 16px;
 }
 
 .cart-content {

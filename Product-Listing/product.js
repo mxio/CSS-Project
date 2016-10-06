@@ -82,7 +82,7 @@ function populateShoppingCart(index, id) {
 		//index is undefined so need to add the variable here again while passing index and id as parameters
 		var index = findIndex(id);
 
-		itemTotal.innerHTML += '<section id="section'+cart.items[index].id+'" class="cart-row"><div class="shopping-cart-img"><img src="#"></div>' + '<div class="col-1">' + cart.items[index].name + "</div>" + " " + '<div class="col-2"><form><input class="box cart-qty-box" value="' + cart.items[index].quantity + '"></input></form><button class="change" itemid="'+cart.items[index].id+'" href="#">Change Quantity</button></div>' + '<div col3id="'+cart.items[index].id+'" class="col-3">$' + cart.items[index].totalPrice + "</div></section>";
+		itemTotal.innerHTML += '<section id="section'+cart.items[index].id+'" class="cart-row"><div class="shopping-cart-img"></div>' + '<div class="col-1">' + cart.items[index].name + "</div>" + " " + '<div class="col-2"><form><input class="box cart-qty-box" value="' + cart.items[index].quantity + '"></input></form><button class="change" itemid="'+cart.items[index].id+'" href="#">Change Quantity</button></div>' + '<div col3id="'+cart.items[index].id+'" class="col-3">$' + cart.items[index].totalPrice + "</div></section>";
 			//Adding itemid attribute to button assigns a separate id to the change button and then pass it to changeQuantity function
 
 	changeQty(index, id);
@@ -146,10 +146,8 @@ function totals() {
 }
 
 function containItem(item) {
-	for (var j = 0; j < cart.items.length; j++)
-	{
-		if (cart.items[j].name === item)
-		{
+	for (var j = 0; j < cart.items.length; j++) {
+		if (cart.items[j].name === item) {
 			return true;
 		}
 	}
@@ -157,18 +155,15 @@ function containItem(item) {
    return false
 }
 
-function calculateTank16Discount() 
-{
+function calculateTank16Discount() {
 	// check if cart contains tank top if so, apply promo (find total of discount, then update cart total)
-	if (containItem("Tank") === true) 
-	{
+	if (containItem("Tank") === true) {
 		//declare new variable to store tank discount
 		//by not recalculating totals() and cart totals, this prevents using promo more than once
 		var tankTotalPlusDiscount = cart.total;
 
 		for (var j = 0; j < cart.items.length; j++) {
-			if (cart.items[j].name === "Tank")
-			{
+			if (cart.items[j].name === "Tank") {
 				tankTotalPlusDiscount =
 			 	tankTotalPlusDiscount - (cart.items[j].totalPrice * cart.promo[0].percent);
 			 }
@@ -182,17 +177,14 @@ function calculateTank16Discount()
 	return;
 }
 
-function calculateAccess16PDiscount() 
-{
+function calculateAccess16PDiscount() {
 	// check if cart contains scarves, if so, apply promo (find total of discount, then update cart total)
-	if (containItem("Scarf") === true) 
-	{
+	if (containItem("Scarf") === true) {
 		//declare new variable set initially to the cart's total to store scarves' total discount
 		var scarvesTotalPlusDiscount = cart.total;
 
 		for (var b = 0; b < cart.items.length; b++) {
-			if (cart.items[b].name === "Scarf") 
-			{
+			if (cart.items[b].name === "Scarf") {
 				scarvesTotalPlusDiscount =
 			 	scarvesTotalPlusDiscount - (cart.items[b].totalPrice * cart.promo[1].percent);
 			 }
@@ -206,8 +198,7 @@ function calculateAccess16PDiscount()
 	return;
 }
 
-function calculateFivePercentDiscount() 
-{
+function calculateFivePercentDiscount() {
 		//declare new variable set initially to the cart's total to store scarves' total discount
 		var fivePercentTotalPlusDiscount = cart.total;
 
@@ -237,142 +228,110 @@ function applyPromo()
 		calculateTank16Discount();
 		// check if total of TANK16's discount is bigger than old promo
 		// if so, use TANK16's discount
-		if (cart.oldPromo === "TANKS16" || cart.oldPromo === "")
-		{
+		if (cart.oldPromo === "TANKS16" || cart.oldPromo === "") {
 			calculateTank16Discount();
 			cart.oldPromo = "TANKS16";
 			return;
 		}
-		if (cart.oldPromo === "ACCESS16" && promoEntered === "TANKS16")
-		{
-			if (cart.tank16Discount < cart.access16Discount && cart.tank16Discount < cart.fivePercentDiscount)
-			{
+		if (cart.oldPromo === "ACCESS16" && promoEntered === "TANKS16") {
+			if (cart.tank16Discount < cart.access16Discount && cart.tank16Discount < cart.fivePercentDiscount) {
 				// apply promo
 				//update html total to be tank16Discount
 				calculateTank16Discount();
 				cart.oldPromo = promoEntered;
 			}
-			else if (cart.tank16Discount > cart.access16Discount && cart.access16Discount < cart.fivePercentDiscount)
-			{
+			else if (cart.tank16Discount > cart.access16Discount && cart.access16Discount < cart.fivePercentDiscount) {
 				calculateAccess16PDiscount();
 				cart.oldPromo = "ACCESS16";
 			}
-			else if (cart.tank16Discount > cart.fivePercentDiscount && cart.fivePercentDiscount < cart.access16Discount)
-			{
-				calculateFivePercentDiscount();
-				cart.oldPromo = "5PERCENT";
-			}
+			
+			
 		}
-		if (cart.oldPromo === "5PERCENT" && promoEntered === "TANKS16")
-		{
+		if (cart.oldPromo === "5PERCENT" && promoEntered === "TANKS16") {
 			// check if TANK16 discount is bigger than 5Percent
-			if (cart.tank16Discount < cart.fivePercentDiscount && cart.tank16Discount < cart.access16Discount)
-			{
+			if (cart.tank16Discount < cart.fivePercentDiscount && cart.tank16Discount < cart.access16Discount) {
 				//apply promo
 				calculateTank16Discount();
 				cart.oldPromo = promoEntered;
 			}
-			else if (cart.tank16Discount > cart.fivePercentDiscount && cart.fivePercentDiscount < cart.access16Discount)
-			{
+			else if (cart.tank16Discount > cart.fivePercentDiscount) {
 				calculateFivePercentDiscount();
 				cart.oldPromo = "5PERCENT";
 			}
-			else if (cart.tank16Discount > cart.access16Discount && cart.access16Discount < cart.fivePercentDiscount)
-			{
-				alert("yes");
-				calculateAccess16PDiscount();
-				cart.oldPromo = "ACCESS16";
-			}
+			
 		}	
 		
 	}
 
 	// has promo
 	// enter access16
-	if (promoEntered === "ACCESS16")
-	{
+	if (promoEntered === "ACCESS16") {
 		// check if total of ACCESS16's discount is bigger than old promo
 		// if so, use TANK16's discount
 		calculateAccess16PDiscount();
-		if (cart.oldPromo === "ACCESS16" || cart.oldPromo === "")
-		{
+		if (cart.oldPromo === "ACCESS16" || cart.oldPromo === "") {
 			calculateAccess16PDiscount();
 			cart.oldPromo = "ACCESS16"
 			return;
 		}
-		if (cart.oldPromo === "TANKS16" && promoEntered === "ACCESS16")
-		{
-			if (cart.access16Discount < cart.tank16Discount)
-			{
+		if (cart.oldPromo === "TANKS16" && promoEntered === "ACCESS16") {
+			if (cart.access16Discount < cart.tank16Discount && cart.access16Discount < cart.fivePercentDiscount) {
 				// apply promo
 				calculateAccess16PDiscount();
 				cart.oldPromo = promoEntered;
-				return; 
 			}
-			else 
-			{
+			else if (cart.access16Discount > cart.tank16Discount && cart.tank16Discount < cart.fivePercentDiscount) {
 				calculateTank16Discount();
 				cart.oldPromo = "TANKS16";
 			}
+			
 		}
-		if (cart.oldPromo === "5PERCENT" && promoEntered === "ACCESS16")
-		{
+		if (cart.oldPromo === "5PERCENT" && promoEntered === "ACCESS16") {
 			// check if TANK16 discount is bigger than 5Percent
-			if (cart.access16Discount < cart.fivePercentDiscount)
-			{
+			if (cart.access16Discount < cart.fivePercentDiscount && cart.access16Discount < cart.tank16Discount) {
 				//apply promo
 				calculateAccess16PDiscount();
 				cart.oldPromo = "ACCESS16";
 			}
-			else 
-			{
+			else if (cart.access16Discount > cart.fivePercentDiscount && cart.fivePercentDiscount < cart.tank16Discount) {
 			calculateFivePercentDiscount();
 			cart.oldPromo = "5PERCENT";
 			}
 		}	
-		
 	}
 
 	// has promo
 	// enter 5percent
-	if (promoEntered === "5PERCENT")
-	{
+	if (promoEntered === "5PERCENT") {
 		// check if total of 5PERCENT's discount is bigger than old promo
 		// if so, use TANK16's discount
 		calculateFivePercentDiscount();
 		
-		if (cart.oldPromo === "5PERCENT" || cart.oldPromo === "")
-		{
+		if (cart.oldPromo === "5PERCENT" || cart.oldPromo === "") {
 			calculateFivePercentDiscount();
 			cart.oldPromo = "5PERCENT";
 			return;
 		}
-		if (cart.oldPromo === "ACCESS16" && promoEntered === "5PERCENT")
-		{
-			if (cart.fivePercentDiscount < cart.access16Discount)
-			{
+		if (cart.oldPromo === "ACCESS16" && promoEntered === "5PERCENT") {
+			if (cart.fivePercentDiscount < cart.access16Discount && cart.fivePercentDiscount < cart.tank16Discount) {
 				// apply promo
 				calculateFivePercentDiscount();
 				cart.oldPromo = promoEntered;
 			}
-			else 
-			{
+			else if (cart.fivePercentDiscount > cart.access16Discount && cart.access16Discount < cart.tank16Discount) {
 				calculateAccess16PDiscount();
 				cart.oldPromo = "ACCESS16";
 			}
+			
 		}
-		if (cart.oldPromo === "TANKS16" && promoEntered === "5PERCENT")
-		{
+		if (cart.oldPromo === "TANKS16" && promoEntered === "5PERCENT") {
 			// check if TANK16 discount is bigger than 5Percent
-			if (cart.fivePercentDiscount < cart.tank16Discount)
-			{
-				
+			if (cart.fivePercentDiscount < cart.tank16Discount && cart.fivePercentDiscount < cart.access16Discount) {
 				//apply promo
 				calculateFivePercentDiscount();
 				cart.oldPromo = "5PERCENT";
 			}
-			else 
-			{
+			else if (cart.fivePercentDiscount > cart.tank16Discount && cart.tank16Discount < cart.access16Discount) {
 				calculateTank16Discount();
 				cart.oldPromo = "TANKS16";
 			}
@@ -407,4 +366,3 @@ cart = {
   	"fivePercentDiscount": 0,
   	"oldPromo": ""
 };
-
