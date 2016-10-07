@@ -345,7 +345,7 @@ function applyPromo()
 	}
 
 	if (promoEntered !== "5PERCENT" || promoEntered !== "ACCESS16" || promoEntered !== "TANKS16") {
-		shoppingCartTotalQty.innerHTML = "$" + parseFloat(cart.total).toFixed(2);
+		shoppingCartTotalQty.innerHTML = "$" + parseFloat(cart.total);
 	}
 }
 
