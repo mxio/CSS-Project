@@ -264,7 +264,6 @@ function applyPromo()
 	}
 	
 
-	// has promo
 	// enter access16
 	if (promoEntered === "ACCESS16") {
 		// check if total of ACCESS16's discount is bigger than old promo
@@ -303,8 +302,6 @@ function applyPromo()
 		return;
 	}
 
-
-	// has promo
 	// enter 5percent
 	if (promoEntered === "5PERCENT") {
 		// check if total of 5PERCENT's discount is bigger than old promo
@@ -343,7 +340,7 @@ function applyPromo()
 		}	
 		return;
 	}
-
+	//sets html total to cart total when invalid promo codes are entered
 	if (promoEntered !== "5PERCENT" || promoEntered !== "ACCESS16" || promoEntered !== "TANKS16") {
 		shoppingCartTotalQty.innerHTML = "$" + parseFloat(cart.total).toFixed(2);
 	}
