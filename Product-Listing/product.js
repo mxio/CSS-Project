@@ -240,13 +240,13 @@ function applyPromo()
 				calculateTank16Discount();
 				cart.oldPromo = promoEntered;
 			}
-			else if (cart.tank16Discount > cart.access16Discount) {
+			else {
 				calculateAccess16PDiscount();
 				cart.oldPromo = "ACCESS16";
 			}
-			
-			
+			return;
 		}
+		
 		if (cart.oldPromo === "5PERCENT" && promoEntered === "TANKS16") {
 			// check if TANK16 discount is bigger than 5Percent
 			if (cart.tank16Discount < cart.fivePercentDiscount) {
@@ -254,14 +254,15 @@ function applyPromo()
 				calculateTank16Discount();
 				cart.oldPromo = promoEntered;
 			}
-			else if (cart.tank16Discount > cart.fivePercentDiscount) {
+			else {
 				calculateFivePercentDiscount();
 				cart.oldPromo = "5PERCENT";
 			}
-			
+			return;
 		}	
-		
+		return;
 	}
+	
 
 	// has promo
 	// enter access16
@@ -280,11 +281,11 @@ function applyPromo()
 				calculateAccess16PDiscount();
 				cart.oldPromo = promoEntered;
 			}
-			else if (cart.access16Discount > cart.tank16Discount) {
+			else {
 				calculateTank16Discount();
 				cart.oldPromo = "TANKS16";
 			}
-			
+			return;
 		}
 		if (cart.oldPromo === "5PERCENT" && promoEntered === "ACCESS16") {
 			// check if TANK16 discount is bigger than 5Percent
@@ -293,12 +294,15 @@ function applyPromo()
 				calculateAccess16PDiscount();
 				cart.oldPromo = "ACCESS16";
 			}
-			else if (cart.access16Discount > cart.fivePercentDiscount) {
+			else {
 			calculateFivePercentDiscount();
 			cart.oldPromo = "5PERCENT";
 			}
+			return;
 		}	
+		return;
 	}
+
 
 	// has promo
 	// enter 5percent
@@ -318,11 +322,11 @@ function applyPromo()
 				calculateFivePercentDiscount();
 				cart.oldPromo = promoEntered;
 			}
-			else if (cart.fivePercentDiscount > cart.access16Discount) {
+			else {
 				calculateAccess16PDiscount();
 				cart.oldPromo = "ACCESS16";
 			}
-			
+			return;
 		}
 		if (cart.oldPromo === "TANKS16" && promoEntered === "5PERCENT") {
 			// check if TANK16 discount is bigger than 5Percent
@@ -331,11 +335,17 @@ function applyPromo()
 				calculateFivePercentDiscount();
 				cart.oldPromo = "5PERCENT";
 			}
-			else if (cart.fivePercentDiscount > cart.tank16Discount) {
+			else {
 				calculateTank16Discount();
 				cart.oldPromo = "TANKS16";
 			}
+			return;
 		}	
+		return;
+	}
+
+	if (promoEntered !== "5PERCENT" || promoEntered !== "ACCESS16" || promoEntered !== "TANKS16") {
+		shoppingCartTotalQty.innerHTML = "$" + parseFloat(cart.total).toFixed(2);
 	}
 }
 
