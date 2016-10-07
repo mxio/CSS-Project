@@ -281,7 +281,6 @@ function applyPromo()
 				cart.oldPromo = promoEntered;
 			}
 			else if (cart.access16Discount > cart.tank16Discount) {
-				alert("working")
 				calculateTank16Discount();
 				cart.oldPromo = "TANKS16";
 			}
@@ -329,7 +328,6 @@ function applyPromo()
 			// check if TANK16 discount is bigger than 5Percent
 			if (cart.fivePercentDiscount < cart.tank16Discount) {
 				//apply promo
-				alert("yes");
 				calculateFivePercentDiscount();
 				cart.oldPromo = "5PERCENT";
 			}
