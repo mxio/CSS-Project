@@ -82,9 +82,6 @@ closingPara.addEventListener('click', function() {
 	screen.value += ')';
 }, false);
 
-percent.addEventListener('click', function() {
-	screen.value += '%';
-}, false);
 
 calc.addEventListener('click', function() {
 	var calc = eval(document.getElementById('screen').value);
@@ -92,3 +89,7 @@ calc.addEventListener('click', function() {
 	document.getElementById('screen').value = calc;
 }, false);
 
+function calculatePercentage() {
+    var input = document.getElementById("screen").value;
+    document.getElementById("screen").value = input/100;
+    }
