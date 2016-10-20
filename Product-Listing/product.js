@@ -178,9 +178,7 @@ function calculateTank16Discount() {
 }
 
 function calculateAccess16PDiscount() {
-	// check if cart contains scarves, if so, apply promo (find total of discount, then update cart total)
 	if (containItem("Scarf") === true) {
-		//declare new variable set initially to the cart's total to store scarves' total discount
 		var scarvesTotalPlusDiscount = cart.total;
 
 		for (var b = 0; b < cart.items.length; b++) {
@@ -189,12 +187,9 @@ function calculateAccess16PDiscount() {
 			 	scarvesTotalPlusDiscount - (cart.items[b].totalPrice * cart.promo[1].percent);
 			 }
 		}
-		//set the tank discount total in the cart to be tank discount total 
 		cart.access16Discount = scarvesTotalPlusDiscount;
-		//update html total
 		shoppingCartTotalQty.innerHTML = "$" + parseFloat(scarvesTotalPlusDiscount).toFixed(2);
 	}
-	// if doesn't contain scarf, do nothing
 	return;
 }
 
@@ -207,18 +202,14 @@ function calculateFivePercentDiscount() {
 
 		} 
 		cart.fivePercentDiscount = fivePercentTotalPlusDiscount;
-		//update html total
 		shoppingCartTotalQty.innerHTML = "$" + parseFloat(fivePercentTotalPlusDiscount).toFixed(2);
 }
 
 
 function applyPromo()
 {
-	
-
 	var promoEntered = document.getElementById('promo').value;
 
-	// enter tank16
 	if (promoEntered === "TANKS16") 
 	{	
 		calculateTank16Discount();
@@ -260,10 +251,7 @@ function applyPromo()
 	}
 	
 
-	// enter access16
 	if (promoEntered === "ACCESS16") {
-		// check if total of ACCESS16's discount is bigger than old promo
-		// if so, use TANK16's discount
 		calculateAccess16PDiscount();
 		if (cart.oldPromo === "ACCESS16" || cart.oldPromo === "") {
 			calculateAccess16PDiscount();
@@ -272,7 +260,6 @@ function applyPromo()
 		}
 		if (cart.oldPromo === "TANKS16" && promoEntered === "ACCESS16") {
 			if (cart.access16Discount < cart.tank16Discount) {
-				// apply promo
 				calculateAccess16PDiscount();
 				cart.oldPromo = promoEntered;
 			}
@@ -283,9 +270,7 @@ function applyPromo()
 			return;
 		}
 		if (cart.oldPromo === "5PERCENT" && promoEntered === "ACCESS16") {
-			// check if TANK16 discount is bigger than 5Percent
 			if (cart.access16Discount < cart.fivePercentDiscount) {
-				//apply promo
 				calculateAccess16PDiscount();
 				cart.oldPromo = "ACCESS16";
 			}
@@ -298,10 +283,7 @@ function applyPromo()
 		return;
 	}
 
-	// enter 5percent
 	if (promoEntered === "5PERCENT") {
-		// check if total of 5PERCENT's discount is bigger than old promo
-		// if so, use TANK16's discount
 		calculateFivePercentDiscount();
 		
 		if (cart.oldPromo === "5PERCENT" || cart.oldPromo === "") {
@@ -311,7 +293,6 @@ function applyPromo()
 		}
 		if (cart.oldPromo === "ACCESS16" && promoEntered === "5PERCENT") {
 			if (cart.fivePercentDiscount < cart.access16Discount) {
-				// apply promo
 				calculateFivePercentDiscount();
 				cart.oldPromo = promoEntered;
 			}
@@ -322,9 +303,7 @@ function applyPromo()
 			return;
 		}
 		if (cart.oldPromo === "TANKS16" && promoEntered === "5PERCENT") {
-			// check if TANK16 discount is bigger than 5Percent
 			if (cart.fivePercentDiscount < cart.tank16Discount) {
-				//apply promo
 				calculateFivePercentDiscount();
 				cart.oldPromo = "5PERCENT";
 			}
