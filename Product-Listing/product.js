@@ -43,7 +43,7 @@ function add(id) {
     }
 
     //if item's id does not exist, push to cart, else change qty
-    if (index === -1) {	
+    if (index === -1 && productQty !== 0) {	
 	    cart.items.push(item);
     }
     else { //if item exists, remove it because it adds another one, then update quantity
@@ -51,6 +51,7 @@ function add(id) {
     	cart.items[index].quantity += productQty;
     	cart.items[index].totalPrice = cart.items[index].price * cart.items[index].quantity;
     }
+
 
     totals();
     showCartOne();
