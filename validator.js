@@ -13,7 +13,9 @@ validator.isEmailAddress = function(input) {
   if (input.indexOf("@") > -1 && input.indexOf(".") > -1 && str1 && str2) {
     return true;
   }
-  else return false;
+  else {
+    return false;
+  }
 };
 
 
@@ -62,7 +64,9 @@ validator.isDate = function(input) {
   if (date > 0) {
     return true;
   }
-  else return false;
+  else {
+    return false;
+  }
 };
 
 
@@ -73,7 +77,9 @@ validator.isBefore = function(input, reference) {
   if (inputParse > referenceParse) {
     console.log(true);
   }
-  else console.log(false);
+  else {
+    console.log(false);
+  }
 
 };
 
@@ -85,7 +91,9 @@ validator.isAfter = function(input, reference) {
   if (inputParse < referenceParse) {
     console.log(true);
   }
-  else console.log(false);
+  else {
+    console.log(false);
+  }
 
 };
 
@@ -99,7 +107,9 @@ validator.isBeforeToday = function(input) {
   if  (inputParse < dParse) {
     console.log(true);
   }
-  else console.log(false);
+  else {
+    console.log(false);
+  }
 };
 
 
@@ -112,7 +122,9 @@ validator.isAfterToday = function(input) {
   if  (inputParse > dParse) {
     return true;
   }
-  else return false;
+  else {
+    return false;
+  }
 };
 
 
@@ -120,7 +132,9 @@ validator.isEmpty = function(input) {
   if (input.length === 0 || !input.trim()) {
       return true; 
   }
-  else return false;
+  else {
+    return false;
+  }
 };
 
 validator.contains = function(input, words) { 
@@ -202,14 +216,18 @@ validator.isComposedOf = function(input, strings) {
       if (inputLower.indexOf(strArr[i]) > -1) {
         composedOf.push("true");
       }
-      else composedOf.push("false");
+      else {
+        composedOf.push("false");
+      }
     }
    
     for (var j in composedOf) {
       if (composedOf[j] === "false") {
         composed = false;
       }
-      else composed = true;
+      else {
+        composed = true;
+      }
     }
   
   console.log(composed);
@@ -220,7 +238,9 @@ validator.isLength = function(input, n) {
   if (input.length <= n) {
     return true;
   }
-  else return false;
+  else {
+    return false;
+  }
 };
 
 
@@ -228,7 +248,9 @@ validator.isOfLength = function(input, n) {
     if (input.length >= n) {
       return true;
     }
-    else return false;
+    else {
+      return false;
+    }
 };
 
 
@@ -276,7 +298,9 @@ validator.lessWordsThan = function(input, n) {
     if (count <= n) {
       console.log(true);
     }
-    else console.log(false);
+    else {
+      console.log(false);
+    }
 };
 
 
@@ -302,7 +326,9 @@ validator.moreWordsThan = function(input, n) {
     if (count >= n) {
       console.log(true);
     }
-    else console.log(false);
+    else {
+      console.log(false);
+    }
 };
 
 
@@ -310,7 +336,9 @@ validator.isBetween = function(input, floor, ceil) {
   if (input >= floor && input <= ceil) {
     return true;
   }
-  else return false;
+  else {
+    return false;
+  }
 };
 
 
@@ -322,7 +350,9 @@ validator.isAlphanumeric = function(input) {
     if (alpha.indexOf(input[i]) > -1) {
         matches.push("true")
     }
-    else matches.push("false");
+    else {
+      matches.push("false");
+    }
   }
   
   var trueFalse = true;
@@ -356,8 +386,9 @@ validator.isCreditCard = function(input) {
         if (alpha.indexOf(newInp[i]) > -1) {
           isAlpha = true;
         }
-        else isAlpha = false;
-
+        else {
+          isAlpha = false;
+        }
       }
     }
     
@@ -382,16 +413,23 @@ validator.isHex = function(input) {
       if (lettersNums.indexOf(hex[i]) > -1) {
         boolean.push("true");      
       }
-      else boolean.push("false");
+      else {
+        boolean.push("false");
+      }
     }
-  } else boolean.push("false");
+  } 
+  else {
+    boolean.push("false");
+  }
   
   try {
   for (i in boolean) {
     if (boolean[i] === "false") {
       throw "Enter valid Hex color";
     }
-    else isHex = true;
+    else {
+      isHex = true;
+    }
   }
   console.log(isHex);
   }
@@ -427,12 +465,18 @@ validator.isRGB = function(input) {
         if (numArr[i] >= 0 && numArr[i] <= 255) {
           boolean.push("true");
         }
-        else boolean.push("false");
+        else {
+          boolean.push("false");
+        }
       }
     }
-    else boolean.push("false");
+    else {
+      boolean.push("false");
+    }
   }
-  else boolean.push("false");
+  else {
+    boolean.push("false");
+  }
   
   for (i in boolean) {
     if (boolean[i] === "false") {
@@ -466,15 +510,25 @@ validator.isHSL = function(input) {
             if(numArr[2] >=0 && numArr[2] <=1) {
               console.log(true);
             }
-            else console.log("false");
+            else {
+              console.log("false");
+            }
           }
-          else console.log("false");
+          else {
+            console.log("false");
+          }
         }
-        else console.log("false");
+        else {
+          console.log("false");
+        }
     }
-    else console.log("false");
+    else {
+      console.log("false");
+    }
   }
-  else console.log("false");
+  else {
+    console.log("false");
+  }
 };
 
 
@@ -504,12 +558,18 @@ var isRGB = function(input) {
         if (numArr[i] >= 0 && numArr[i] <= 255) {
           boolean.push("true");
         }
-        else boolean.push("false");
+        else {
+          boolean.push("false");
+        }
       }
     }
-    else boolean.push("false");
+    else {
+      boolean.push("false");
+    }
   }
-  else boolean.push("false");
+  else {
+    boolean.push("false");
+  }
   
   isRGB = true;
   
@@ -535,16 +595,23 @@ var isHex = function(input) {
       if (lettersNums.indexOf(hex[i]) > -1) {
         boolean.push("true");      
       }
-      else boolean.push("false");
+      else {
+        boolean.push("false");
+      }
     }
-  } else boolean.push("false");
+  } 
+  else {
+    boolean.push("false");
+  }
   
   
   for (i in boolean) {
     if (boolean[i] === "false") {
       isHex = false;
     }
-    else isHex = true;
+    else {
+      isHex = true;
+    }
   }
   return isHex;
 };
@@ -573,15 +640,25 @@ var isHSL = function(input) {
             if(numArr[2] >=0 && numArr[2] <=1) {
               isHSL = true;
             }
-            else isHSL = false;
+            else {
+              isHSL = false;
+            }
           }
-           else isHSL= false;
+           else {
+            isHSL= false;
+          }
         }
-       else isHSL = false;
+       else {
+        isHSL = false;
+      }
     }
-     else isHSL = false;
+     else {
+      isHSL = false;
+    }
   }
-   else isHSL = false;
+   else {
+    isHSL = false;
+  }
 
 };
 isHSL(input);
@@ -590,7 +667,9 @@ isHSL(input);
 if (isRGB === true || isHSL === true || isHex === true) {
   console.log(true);
 }
- else console.log(false);
+else {
+  console.log(false);
+}
 };
 
 
@@ -618,11 +697,13 @@ validator.isTrimmed = function(input) {
   else if (input.length === trim.length) {
     return true;
   }
-  else
+  else {
     return false;
+  }
 };
 
 window.validator = validator;
+
 })(window);
 
 
